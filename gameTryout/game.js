@@ -2,12 +2,12 @@
 // Button click hides the start screen and shows the game
 document.addEventListener('DOMContentLoaded', function() {
     const startButton = document.getElementById("start-button")
-    const startScreenArea = document.getElementById("start-screen-area")
-    const gameArea = document.getElementById("game-area")
+    const startContainer = document.getElementById("start-container")
+    const gameContainer = document.getElementById("game-container")
     
     startButton.addEventListener('click', function(e) {
-        startScreenArea.classList.add("element-hidden")
-        gameArea.classList.remove("element-hidden")
+        startContainer.style.display = "none"
+        gameContainer.style.display = "flex"
     })
 })
 
