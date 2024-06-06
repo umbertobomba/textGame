@@ -1,6 +1,15 @@
-let fruits = ["Banana", "Apple", "Cherries", "Grapefruit"]
+const car = {
+	brand: "Toyota",
+	color: "Red",
+	year: 2012,
+	secondHand: true,
+    honk: function() {
+        console.log("My " + this.brand + " makes Whoop Whoop!")
+    }
+} 
 
-fruits.map((fruit, index) => {
-    console.log("Aktuelle Iteration: " + index)
-    console.log("I like " + fruit + "!")
-})
+console.log(car)
+console.log(car.color)
+
+// Ausführen einer Methode eines Objects
+car.honk()
