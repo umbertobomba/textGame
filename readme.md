@@ -11,9 +11,9 @@
 
 # Einstieg Basics
 
-### HTML
+## HTML
 
-##### Basic HTML Gerüst 
+### Basic HTML Gerüst 
 ```html
 <!DOCTYPE html>
 <html>
@@ -44,7 +44,7 @@
 
 Bei html spricht man von tags, sobald etwas im Code innerhalb von spitzen Klammern steht. Dabei wird unterschieden zwischen dem opening- & closing tag. Als Beispiel: das div tag innerhalb des body tags beginnt mit dem opening tag `<div>` und wird geschlossen mit dem closing tag `</div>`. Es gibt Ausnahmen, jedoch in der Regel hat ein html tag immer ein opening- & closing tag. Während das Wort tag die korrekte Bezeichnung ist innerhalb des codes, wird oft auch von einem Element gesprochen. Dies bezieht sich auf die Sicht des Browsers, somit ist das selbe gemeint wenn von einem `div` Element oder tag gesprochen wird.
 
-##### Unterschiedliche HTML tags
+### Unterschiedliche HTML tags
 Neben den oben verwendeten html tags gibt es etwas über 100 weitere tags die verwendet werden können. Viele davon dienen der Semantik, einige werden zur Gruppierung benutzt und andere haben ganz spezifische Einsatzbereiche. Für dieses Projekt setzt sich der Fokus lediglich auf die vier html tags:
 
 - `<div>`
@@ -62,7 +62,7 @@ Neben den oben verwendeten html tags gibt es etwas über 100 weitere tags die ve
 
 > Füge die drei neuen html tags innerhalb des body tags ein und speichere die Datei.
 
-##### Kommentare in HTML
+### Kommentare in HTML
 Eine Zeile Code zu kommentieren ist nie falsch um zu einem späteren Zeitpunkt rasch wieder in die Logik des Projektes rein zu kommen. Neben der Dokumentation kann mit einem Kommentar auch ein Teil des Codes temporär deaktiviert werden, dabei wird von "auskommentieren" gesprochen. In HTML wird ein Kommentar auch mit einem opening & closing tag definiert. Der Start macht `<!--` und geschlossen wird ein Kommentar mit `-->`. Alles innerhalb des tags wird nicht als Code interpretiert und kann über mehrere Zeilen definiert werden.
 
 ```html
@@ -76,12 +76,12 @@ Eine Zeile Code zu kommentieren ist nie falsch um zu einem späteren Zeitpunkt r
 
 > Versuche einmal das `input` tag sowie den `button` mit einem Kommentar auszublenden.
 
-##### Das div tag und nesting (parent/child)
+### Das div tag und nesting (parent/child)
 Während das div tag im Vergleich zu anderen tags relativ simple aussieht, ist es ein wahres Arbeitstier und (fast) ein Alleskönner. Das div tag verdeutlicht sehr gut das Prinzip der Verschachtelung, in englisch auch unter nesting bekannt. Unter Vorbehalt von einigen Ausnahmen kann jedes html tag weitere tags in sich haben, dabei wird von nesting gesprochen. Das äussere html tag wird parent element genannt während alles innerhalb ein child element ist. Sehr oft werden div tags benutzt für die Organisation und Gruppierung von anderen html tags. Bei der Webentwicklung wird dafür oft der Begriff container benutzt.
 
 > Versuche einmal dein `div` tag zu verschachteln mit mehreren child elements. Die Vorteile von nesting werden im weiteren Verlauf des Projekt immer offensichtlicher, aktuell reicht es einfach zu wissen das es nesting gibt.
 
-##### Das input tag
+### Das input tag
 Das input tag ist das erste tag welches nicht der Methodik folgt mit einem opening- & closing tag. Auffallend ist das innerhalb der spitzen Klammern zusätzlich noch `type=text` geschrieben steht. Dabei handelt es sich um ein Attribute für ein html tag und ein tag kann mehrere solcher Attribute bekommen. In dieser Ausführung des `<input>` tags werden alle nötigen Informationen mittels Attribute mitgegeben und nicht zwischen dem opening- & closing tag.
 
 ```html
@@ -91,10 +91,10 @@ Das input tag ist das erste tag welches nicht der Methodik folgt mit einem openi
 
 > Füge die beiden tags innerhalb deines body tags ein und schau was sich ändert.
 
-##### Das button & image tag
+### Das button & image tag
 Die beiden tags benötigen noch etwas Vorwissen und kommen in den nächsten Abschnitten zum Zuge.
 
-##### Vorbereitung für nächsten Abschnitt
+### Vorbereitung für nächsten Abschnitt
 Für die kommenden Beispiele im nächsten Abschnitt wird eine spezifische Struktur benötigt. Lösche alles innerhalb des body tags in deiner `index.html` Datei und versuche folgendes umzusetzen: 
 - Das body tag soll zwei container Elemente haben.
 - Im ersten container soll ein Element für einen Titel, einen Text sowie für ein Zitat sein.
@@ -102,10 +102,10 @@ Für die kommenden Beispiele im nächsten Abschnitt wird eine spezifische Strukt
  
 Wenn du nicht sicher bist, öffne die Datei `baseStructure.md` zur Unterstützung oder zum Abgleich.
 
-### CSS
+## CSS
 CSS (Cascading Style Sheets) wird verwendet, um das Aussehen von html Elementen zu gestalten. Es ermöglicht die Kontrolle von Farben, Schriftarten, Abstände, Rahmen und Positionierung von Elementen. 
 
-##### Inline styles
+### Inline styles
 Das Aussehen, definiert in css wird umgangssprachlich styles genannt. Der Name inline styles kommt daher, weil die styles direkt auf der Zeile des html tags als Attribute definiert werden. 
 
 ```html
@@ -127,7 +127,7 @@ Für die bessere Übersicht können die inline styles auch auf mehrere Zeilen au
 </div>
 ```
 
-##### Das style tag
+### Das style tag
 Um styles zu definieren gibt es mit `style` ein eigenes HTML tag zum definieren der styles.
 
 ```html
@@ -141,7 +141,7 @@ Um styles zu definieren gibt es mit `style` ein eigenes HTML tag zum definieren 
 
 > Füge das `style` tag im `head` tag hinzu.
 
-##### CSS classes und ID's
+### CSS classes und ID's
 Mit dem style tag werden die styles nicht mehr inline geschrieben im html tag und somit ausgelagert. Damit ein CSS style einem Element zugewiesen werden kann, werden Klassen und ID's eingesetzt. Der Unterschied zwischen Klassen und ID's ist das ID's einzigartig sein müssen, während Klassen an so viele Elemente wie gewünscht hinzugefügt werden können. Eine Klasse oder ID wird mit einem Attribut dem HTML tag angefügt mit `class="namen-der-Klasse"` oder `id="name-der-id"`. Innerhalb des style tags wird auf eine Klasse mit einem Punkt verwiesen `.name-der-klasse` und auf eine ID mit einem hashtag `#name-der-id`.
 
 ```html
@@ -166,7 +166,7 @@ Mit dem style tag werden die styles nicht mehr inline geschrieben im html tag un
 
 Gib den beiden div Elementen für den Text und das Zitat die Klassen `text` und `quote`.
 
-##### Farben & Schrift anpassen 
+### Farben & Schrift anpassen 
 
 ```html
 <style>
@@ -190,7 +190,7 @@ Gib den beiden div Elementen für den Text und das Zitat die Klassen `text` und 
 
 > Innerhalb des script tags füge die zwei neuen Klassen hinzu mit den Properties/Values wie oben beschrieben.
 
-##### Margin und padding property
+### Margin und padding property
 Standardmässig sind alle html Elemente immer nahtlos miteinander verbunden. Aktuell werden alle Elemente praktisch ohne Abstand untereinander angezeigt. Um zu zeigen, das es sich beim zweiten Titel um einen eigenständigen Abschnitt handelt würde ein wenig Abstand gut tun. Dafür kommt das Property `margin` ins Spiel welches eine Sperrzone um das HTML Element definiert.
 
 ```html
@@ -223,7 +223,7 @@ Der Text mit dem grauen Hintergrund klebt auf der rechten Seite direkt am Rand w
 
 > Erweitere die `text` Klasse mit `padding` wie im Beispiel oben.
 
-##### Unterschiedliche Schreibweisen von padding & margin
+### Unterschiedliche Schreibweisen von padding & margin
 Die beiden properties `margin` und `padding` können unterschiedlich geschrieben werden, sprich auf die properties kann unterschiedlich zugegriffen werden. Soll ein Wert nur in eine Richtung gelten, kann direkt auf das property mit der entsprechenden Orientierung zugegriffen werden wie z.B `margin-top`. Werden zwei oder mehr Orientierungen benötigt kommt die Schreibweise `margin: 2px 0 2px 0` zum Zuge. Dabei ist der erste Wert immer gegen oben (top) und geht im Uhrzeigersinn drum herum. Soll einer Richtung keinen Wert zugewiesen werden, wird dies mit der Ziffer 0 deklariert. Als dritte Variante kann `margin: 12px` geschrieben werden, was auf allen vier Seiten den selben Wert hinzufügt. Die gleichen Schreibweisen gelten auch für `padding`. 
 
 ```css
@@ -243,7 +243,7 @@ Die beiden properties `margin` und `padding` können unterschiedlich geschrieben
 }
 ```
 
-##### Ausgelagerte styles Datei
+### Ausgelagerte styles Datei
 Mit diesen vier CSS Klassen wird es bereits etwas überfüllt im `index.html` file und grundsätzlich sollen zur Übersicht und maintainability im `index.html` auch nur HTML Elemente und tags drin stehen. Für eine bessere Übersicht können die styles in ein externes file ausgelagert werden. 
 
 > Erstelle ein neues file mit dem Namen `styles.css` und kopiere die vier CSS Klassen ohne das style tag rein.
@@ -259,7 +259,7 @@ Damit der Browser die Anweisungen bekommt wie die HTML Elemente aussehen sollen,
 
 > Füge das `link` tag in deinem `index.html` file ein innerhalb des `head` tag und lösche das `style` tag.
 
-##### Pseudo-classes
+### Pseudo-classes
 Pseudo Klassen in CSS sind spezielle keywords, die einer CSS Klasse hinzugefügt werden, um einen spezifischen Zustand des Elementes zu definieren. Das ermöglicht es, Elemente basierend auf ihrem Zustand zu stylen. In dem Beispiel mit `.button:hover` ist der Teil nach dem Doppelpunkt die Pseudo Klasse. Sobald ein hover effect (Mit der Maus auf das Element ohne zu klicken) stattfindet, bekommt jedes Element mit der Klasse `.button` die styles aus der Klasse `.button:hover`. Ohne den hover effect, alle Elemente haben die styles aus der normalen `.button` Klasse.  
 
 ```css
@@ -276,15 +276,17 @@ Pseudo Klassen in CSS sind spezielle keywords, die einer CSS Klasse hinzugefügt
 ```
 
 > Gib dem button tag im `index.html` die Klasse "button" und kopiere die beiden CSS Klassen in dein `styles.css` file. Navigiere anschliessend mit dem Mauszeiger auf den Button ohne zu klicken.
-### JavaScript
+
+## JavaScript
 JavaScript ermöglicht es, das Verhalten von html Elementen auf einer Webseite zu steuern. Im kommenden Teil werden die basics erarbeitet um am Schluss mit den html Elementen im `index.html` zu interagieren.
 
-##### Browser devTools und die Konsole
+### Browser devTools und die Konsole
 Jeder Browser verfügt über die Developer Tools, welche mit einem klick auf die rechte Maustaste geöffnet werden können oder direkt über die Taste F12. Aktuell reicht es einmal in den diversen Menüs in den devTools die Konsole zu öffnen.
 
-##### Script tag & console.log()
+### Script tag & console.log()
 Mit dem script tag kann wie bei den styles, javascript direkt im `index.html` file geschrieben werden welches auf der Webseite ausgeführt wird. Die Funktion `console.log()` ermöglicht es, alles was innerhalb der Klammern steht in der Konsole auszugeben. 
 ```html
+
 <head>
 	<link rel="stylesheet" href="styles.css">
 	<title>Page Title</title>
@@ -296,7 +298,7 @@ Mit dem script tag kann wie bei den styles, javascript direkt im `index.html` fi
 
 > Füge das script tag im `index.html` file innerhalb des header tags ein und schaue was in der Konsole passiert.
 
-##### Ausgelagerte javascript Datei
+### Ausgelagerte javascript Datei
 Mit der selben Begründung für die Übersicht und maintainability, sollte der javascript code nicht innerhalb des `index.html` files stehe. Aus diesem Grund wird auch der javascript code in ein externes files geschrieben und im `index.html` referenziert.
 
 ```html
@@ -309,7 +311,7 @@ Mit der selben Begründung für die Übersicht und maintainability, sollte der j
 
 > Erstelle ein neues file mit dem Namen `game.js` und kopiere die Zeile innerhalb des script tags in das neue file. Im `index.html`file passe das script tag an wie oben im Beispiel.
 
-##### Kommentare in javascript
+### Kommentare in javascript
 Wie auch in HTML möglich, können auch in javascript Kommentare hinterlegt werden. In javascript gibt es zwei Möglichkeiten einen Kommentar zu definieren.
 
 ```js
@@ -320,7 +322,7 @@ console.log("Hello Amy")
 und wird multi line comment genannt */
 ```
 
-##### Variablen
+### Variablen
 In Variablen können Werte abgespeichert werden für die Benutzung zu einem späteren Zeitpunkt oder um Wiederholungen zu verhindern, wenn ein Wert immer wieder verwendet werden soll. In javascript gibt es drei Varianten eine Variable zu definieren:
 - `var`
 - `let`
@@ -360,7 +362,7 @@ console.log(LAST_NAME)
 
 > Füge der Variable LAST_NAME einen neuen Nachnamen zu und schau was in der Konsole passiert.
 
-##### Datentypen
+### Datentypen
 ```js
 // String
 console.log("Amy benutzt jetzt javascript in der konsole")
@@ -372,7 +374,7 @@ console.log(2)
 console.log(true)
 ```
 
-##### Datentypen erkennen / ausgeben
+### Datentypen erkennen / ausgeben
 Mit der Funktion `typeof()` wird erkannt um welchen Datentyp es sich handelt von dem Objekt innerhalb der Klammer. 
 
 ```js
@@ -385,7 +387,8 @@ console.log(number)
 console.log(bool)
 ```
 
-##### Operatoren für Nummern
+### Operatoren für Nummern
+
 ```js
 // Addition
 console.log(2 + 2)
@@ -403,7 +406,7 @@ console.log(20 / 2)
 console.log(10 % 3)
 ```
 
-##### Operatoren für Strings
+### Operatoren für Strings
 Es handelt sich hier nicht direkt um einen Operator für strings, da Buchstaben nicht miteinander addiert oder multipliziert werden können. Trotzdem ist es möglich bei strings ein `+` zu verwenden um die beiden Texte miteinander zu kombinieren.
 
 ```js
@@ -428,7 +431,7 @@ console.log("Mein Name ist " + fullName + " und ich mag die Zahl " + 8)
 
 Im Beispiel oben wird zweimal die Funktion `console.log()` aufgerufen um `firstName` und dann `lastName` auf der Konsole auszugeben. Dies kann abgekürzt werden indem beide Variablen auf einer Zeile geschrieben werden, getrennt von einem Komma `console.log(firstName, lastName)`.
 
-##### Zufälliger Werte ausgeben
+### Zufälliger Werte ausgeben
 Mit der Funktion `Math.random()` wird eine zufällige Zahl zwischen 0 und 1 generiert.
 
 ```js
@@ -456,7 +459,7 @@ let randomNumber = Math.floor(Math.random() * (max - min) + min)
 console.log(randomNumber)
 ```
 
-##### Vergleichsoperatoren
+### Vergleichsoperatoren
 Diese Art des Operator ist eine sehr häufig verwendete Methode und ein Grossteil des Programmierens würde nicht funktionieren ohne. Weshalb dies so wichtig ist, wird im nächsten Abschnitten aufgezeigt. Für jetzt ist es einfach einmal wichtig zu wissen das es diese Vergleichsoperatoren gibt und wie sie grundsätzlich funktionieren.
 
 Der Aufbau eines solchen Vergleichsoperator ist immer:
@@ -484,7 +487,7 @@ console.log(5 <= 5)
 console.log(5 >= 4)
 ```
 
-##### If / else
+### If / else
 Das Herzstück einer jeden Programmiersprache! Mit if / else kann je nach Kondition anders reagiert werden, sprich ein anderer Code Abschnitt ausgeführt werden. 
 
 Der Aufbau eines if / else statements ist folgender: 
@@ -519,7 +522,7 @@ if((costOfFood + costOfRent) < BUDGET ) {
 }
 ```
 
-##### Else if
+### Else if
 In einem if / else statement gibt es noch die Option von `else if {}`, dies wird benutzt wenn nicht nur auf eine Kondition sondern auf mehrere reagiert werden soll. 
 
 Damit erweitert sich der Aufbau des if / else statement auf folgendes: 
@@ -539,7 +542,7 @@ if((costOfFood + costOfRent) < BUDGET) {
 }
 ```
 
-##### If mit AND & OR
+### If mit AND & OR
 Es besteht die Möglichkeit bei einem Statement auch auf mehrere Werte zu prüfen. Dabei kann der if block ausgeführt werden wenn z.B nur einer der Werte stimmt oder es müssen zwingend alle Werte true sein.
 
 ```js
@@ -565,7 +568,7 @@ if(person01 === "Amy" && person02 === "Gil") {
 }
 ```
 
-##### If statement ohne else block
+### If statement ohne else block
 Oft wird der else block nicht benötigt und ein if / else wird nur verwendet zur Überprüfung ob ein gewisses Ereignis eintrifft. Dafür kann der else block auch komplett weg gelassen werden.
 
 ```js
@@ -585,7 +588,7 @@ if(score > highScore) {
 }
 ```
 
-##### Funktionen
+### Funktionen
 Funktionen ermöglichen es wiederverwendbaren Code zu schreiben. Mit Funktionen ist der Code lesbarer, die Wartung wird erleichtert und Wiederholungen werden vermieden. Eine Funktion kann wieder auf mehrere Varianten geschrieben werden. 
 
 Einmal als sogenannte "arrow function" wo diese wie bei der definition einer variable mit `const name =` beginnt und auf der rechten Seite des Gleichheitszeichens wird die Funktion definiert.
@@ -606,7 +609,7 @@ function name() {
 
 Es gibt noch andere Möglichkeiten, diese werden aber für dieses Projekt nicht benötigt. In den kommenden Beispielen und im Spiel werden ausschliesslich "arrow functions" eingesetzt bis auf eine Ausnahme.
 
-##### Funktionen ausführen
+### Funktionen ausführen
 Eine Funktion wird immer aufgerufen mit dem Namen der Funktion, gefolgt von zwei Klammern. Im Beispiel unten wird die Funktion mit `sayHello()` aufgerufen und kann so oft verwendet werden wie gewünscht. Sollte sich der der Text nun ändern zu "Aloah Amy", kann dies in der Funktion einmalig geändert werden. Überall im Code wo die Funktion aufgerufen wird, ist der Text nun automatisch angepasst.
 
 ```js
@@ -622,7 +625,7 @@ sayHello()
 
 > Erstelle die Funktion wie oben im Beispiel und rufe diese mehrfach auf.
 
-##### Parameter für Funktionen
+### Parameter für Funktionen
 Beim Aufruf einer Funktion können Parameter mitgeschickt werden innerhalb der Klammern. Dies ermöglicht eine dynamische Funktion, welche Code ausführt mit Parameter welche der Funktion mitgegeben werden. 
 Die `sayHello` Funktion wird erweitert dem Parameter `name` innerhalb der Klammern. Dabei handelt es sich um einen Platzhalter und kann wie eine Variable angesehen werden, welche jedoch nicht zuerst definiert werden muss. Innerhalb der Funktion kann zu jeder Zeit auf den Parameter `name` zugegriffen werden und erhält den Wert, welcher der Funktion beim Aufruf mitgeschickt wurde.
 
@@ -669,7 +672,7 @@ const sayHello = (name, age) => {
 sayHello("Gilby", 25)
 ```
 
-##### Wert zurückgeben aus Funktion
+### Wert zurückgeben aus Funktion
 Eine Funktion kann nicht nur benutzt werden um einfach einen Codeblock auszuführen, die Funktion kann auch einen Wert zurückgeben welcher in eine Variable gespeichert wird. Wichtig dabei ist das Wort `return` was aus der Funktion etwas ausgibt.
 
 ```js
@@ -685,7 +688,7 @@ let addedNumbers = myFunction(2, 5)
 console.log(addedNumbers)
 ```
 
-##### Programmiere einen simplen Taschenrechner
+### Programmiere einen simplen Taschenrechner
 Mit allem was bisher erarbeitet wurde kann ein simpler Taschenrechner programmiert werden. Folgende Anforderungen sollen dabei erfüllt werden:
 
 - Erstelle eine Funktion welche zwei Zahlen entgegen nimmt.
@@ -694,7 +697,7 @@ Mit allem was bisher erarbeitet wurde kann ein simpler Taschenrechner programmie
 
 Eine Lösungsvariante findest du im file `calculator.md`.
 
-##### Arrays
+### Arrays
 Arrays sind spezielle Datenstrukturen, die es ermöglichen, mehrere Werte in einer einzigen Variablen zu speichern. Diese Werte können beliebige Datentypen sein wie Nummern, Strings, Objekte (Dazu im nächsten Abschnitt mehr) oder sogar andere Arrays. Ein Array wird mit eckigen Klammern `[]` erstellt, und die Werte innerhalb sind durch Kommas getrennt.
 
 ```js
@@ -719,7 +722,7 @@ Ein Array bringt neben der Funktion `arrayNamen.length`  einige weiter Funktione
 - `shift()` & `unshift()`
 - `forEach()` & `map()`
 
-##### Array push & pop
+### Array push & pop
 ```js
 let fruits = ["Banana", "Apple"]
 console.log(fruits)
@@ -733,7 +736,7 @@ fruits.pop()
 console.log(fruits)
 ```
 
-##### Array shift & unshift
+### Array shift & unshift
 ```js
 let fruits = ["Banana", "Apple"]
 console.log(fruits)
@@ -747,7 +750,7 @@ fruits.unshift("Cherries")
 console.log(fruits)
 ```
 
-##### Array forEach
+### Array forEach
 Die Funktion `forEach` ermöglicht es über die Werte innerhalb eines Array zu iterieren und für jedes einzelne Element Code auszuführen. Ein kurzer Fokus auf das Wort `fruit` innerhalb der Klammern von `fruits.forEach()`. Dieses Wort ist frei wählbar und funktioniert im Grundprinzip gleich wie bei den Parameter einer Funktion. Was auch immer der Wert innerhalb des Array ist in der aktuellen iteration, wird darin gespeichert und ist innerhalb der geschweiften Klammern benutzbar.
 
 ```js
@@ -769,7 +772,7 @@ fruits.forEach((fruit, index) => {
 })
 ```
 
-##### Object
+### Object
 Ein Object ist gleich wie das Array eine spezielle Datenstruktur um mehrere Werte in einer Variable zu speichern. Ein Object wird mit geschweiften Klammern `{}` erstellt, und die Werte innerhalb sind auch durch Kommas getrennt. Der Unterschied zum Array ist jedoch das ein Wert eines Objects immer aus einem `key:value` pair besteht. Im Beispiel unten ist der erste Wert `brand:"Toyota"` und dabei ist `brand` der key und `"Toyota"` der dazugehörige value. Ein Zugriff oder die Ausgabe aller Werte eines Objects ist möglich mit `console.log(car)`. Durch das `key:value` pair kann aber auch auf ganz spezifische Werte zugegriffen werden wie z.B. mit `console.log(car.color)`. 
 
 ```js
@@ -803,7 +806,7 @@ car.honk()
 
 Etwas neues innerhalb der Funktion ist der Begriff `this` was lokal in der Funktion auf den aktuellen Kontext verweist. Mit `this` referenziert die Funktion auf das aktuelle Object und ersetzt den Namen des Objects. In der Ausgabe in die Konsole könnte `this.brand` auch mit `car.brand` ersetzt werden und hätte das selbe Ergebnis. Für die maintainability und Flexibilität wird `this` verwendet, somit funktioniert der Code auch noch falls das Object umbenannt werden würde in z.B. "vehicle". 
 
-##### Ein Object iterieren / loopen
+### Ein Object iterieren / loopen
 Auch in einem Object kann ein loop gemacht werden wie bei einem Array. Dieser wird jedoch etwas anders gemacht und wirkt auf den ersten Blick etwas komplexer. 
 
 ```js
@@ -840,7 +843,7 @@ for(let key in car) {
 
 Der letzte Teil der nun noch fehlt ist das if statement `if(car.hasOwnProperty(key))`. Es ist eine Best Practice beim Iterieren über Objects in javascript und alle weiteren Information dazu würden den Rahmen dieses Projektes sprengen.
 
-##### Objects in Arrays und umgekehrt
+### Objects in Arrays und umgekehrt
 Ein Object kann ein oder mehrere Arrays beinhalten sowie ein Array auch Objects beinhalten kann.
 
 ```js
@@ -896,7 +899,7 @@ Erstelle einen neuen Ordner mit dem Namen "02_Advanced" und erstelle darin ein n
 </html>
 ```
 
-### Event listener auf button
+## Event listener auf button
 Damit bei einem klicken auf einen Button javascript ausgeführt werden kann, muss ein event listener erstellt werden. Dieser hört (listen) oder reagiert auf einen spezifischen event und führt dann Code aus. In dem Beispiel mit dem Button reagiert der Code auf den event eines Klicks. 
 
 ```html
@@ -987,7 +990,7 @@ startButton.addEventListener('click', function() {
 })
 ```
 
-### HTML child und parent Elemente anzeigen
+## HTML child und parent Elemente anzeigen
 In javascript ist es möglich das parent oder child Element anzuzeigen aus der Sicht des aktuellen Elements. Mit `parentElement` auf das Element der Variable `startButton` wird das parent `div` des Containers angezeigt.
 
 ```js
@@ -1036,7 +1039,7 @@ startButton.addEventListener('click', function() {
 })
 ```
 
-### HTML Elemente manipulieren
+## HTML Elemente manipulieren
 Einem HTML Element können beliebig child Elemente hinzugefügt und wieder entfernt werden. Für dieses Beispiel soll der erste Container drei Buttons haben und der zweite soll leer sein. Im javascript file soll zum Start nur der leere event listener auf dem DOM sein.
 
 ```html
@@ -1144,7 +1147,7 @@ removeButton.disabled = false
 
 > Aktiviere und deaktiviere die Buttons nachdem der  `forEach` loop aber noch innerhalb des event listeners
 
-### Advanced Challenge
+## Advanced Challenge
 Als letzte Challenge bevor die Umsetzung des Spiels beginnt soll die Logik umgesetzt werden, das mit den beiden Buttons Früchte der Liste hinzugefügt und entfernt werden können.
 
 Acceptance criteria:
@@ -1174,7 +1177,7 @@ Mit diesem Projekt wird ein Spiel programmiert, welches dem Spieler in Textform 
 
 > WICHTIG: Benutze bei den Klassen und ID's aus der Anleitung unbedingt die exakten Namen damit die im voraus erstellten CSS styles passen.
 
-### Setup & HTML Struktur
+## Setup & HTML Struktur
 Erstelle einen neuen Ordner mit dem Namen "TextGame" und erstelle darin eine `index.html`, `game.js` und `styles.css` Datei. Kopiere den Inhalt des files `baseIndex.html` aus dem "support" Ordner in dein `index.html`. 
 
 Erstelle innerhalb des `body` tags ein `div` mit der Klasse `main-container`. Erstelle darin zwei weitere `div` Elemente mit der ID `start-container`, respektiv `game-container`.
@@ -1227,7 +1230,7 @@ Im `div` mit der ID `option-buttons` erstelle einen `button` mit der Klasse `btn
 </div>
 ```
 
-### Übersicht des user interface
+## Übersicht des user interface
 Alle Elemente zur Anzeige des Spiels sind nun im `index.html` bereits erstellt, jedoch noch ohne Inhalte. Zum besseren Verständnis werden die einzelnen Elemente und deren Aufgaben aufgezeigt.
 
 `<div class="main-container">`
@@ -1262,7 +1265,7 @@ Aktuell ist ein `img` tag vorhanden im `index.html` welches jedoch noch kein Bil
 
 Öffne die Datei `scenes.md` im Ordner support und kopiere den Text der ersten Szene in das `div` Element mit der ID `text`. Ersetze in den ersten beiden Buttons für die Optionen die Optionstexte aus der ersten Szene.
 
-### Startansicht von Spielansicht trennen
+## Startansicht von Spielansicht trennen
 Die Startansicht sollte zu Beginn des Spiels alleine angezeigt werden ohne die Spielansicht. Wird das Spiel gestartet soll die Startansicht ausgeblendet werden und die Spielansicht eingeblendet.
 
 
