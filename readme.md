@@ -1,11 +1,3 @@
-# ToC
-
-- [Arbeitsumgebung, Git und der Editor](#Arbeitsumgebung, Git und der Editor)
-- [Einstieg Basics](#Einstieg Basics)
-- [Erweiterte Techniken](#Erweiterte-Techniken)
-- []()
-- []()
-
 # Arbeitsumgebung, Git und der Editor
 
 ### Editor
@@ -886,6 +878,7 @@ fruits.forEach(fruit => {
 	console.log(fruit)
 })
 ```
+
 # Erweiterte Techniken
 Erstelle einen neuen Ordner mit dem Namen "02_Advanced" und erstelle darin ein neues `index.html`, `game.js` und `styles.css` file. Für das `index.html` kann die Vorlage von unten verwendet werden.
 
