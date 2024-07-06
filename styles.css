@@ -1,0 +1,22 @@
+.main-title{
+    font-size: 32px; 
+    color: blue;
+    margin-bottom: 16px;
+}
+
+.text{
+    font-size: 24px;
+    background-color: lightgray;
+    padding: 8px 0px 8px 16px;
+    margin-bottom: 30px;
+}
+
+.quote{
+    font-size: 20px;
+    font-style: italic;
+    color: grey;
+}
+
+.first-container{
+    margin-bottom: 40px;
+}
