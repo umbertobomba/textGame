@@ -20,3 +20,15 @@
 .first-container{
     margin-bottom: 40px;
 }
+
+.button{
+    padding: 8px 24px 8px 24px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.button:hover{
+    background-color: black;
+    color: white;
+}
+
