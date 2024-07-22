@@ -1200,12 +1200,12 @@ Erstelle innerhalb des `body` tags ein `div` mit der Klasse `main-container`. Er
 </body>
 ```
 
-Innerhalb des `start-container` erstelle drei weitere Elemente. Ein `div` mit der Klasse `game-title` und einem Titel wie z.B "Amy's Programmier Abenteuer". Ein text `input` Feld mit der Klasse `name-field` und einem `placeholder`. Als letztes ein `button` mit der ID `start-button`. 
+Innerhalb des `start-container` erstelle drei weitere Elemente. Ein `div` mit der Klasse `game-title` und einem Titel wie z.B "Amy's Programmier Abenteuer". Ein text `input` Feld mit der ID `name-field` und einem `placeholder`. Als letztes ein `button` mit der ID `start-button`. 
 
 ```html
 <div id="start-container">
 	<div class="game-title">Amy's Programmier Abenteuer</div>
-	<input class="name-field" type="text" placeholder="Name"/>
+	<input id="name-field" type="text" placeholder="Name"/>
 	<button id="start-button">Start</button>
 </div>
 ```
@@ -1270,13 +1270,559 @@ Aktuell ist ein `img` tag vorhanden im `index.html` welches jedoch noch kein Bil
 Öffne die Datei `scenes.md` im Ordner support und kopiere den Text der ersten Szene in das `div` Element mit der ID `text`. Ersetze in den ersten beiden Buttons für die Optionen die Optionstexte aus der ersten Szene.
 
 ### Startansicht von Spielansicht trennen
-Die Startansicht sollte zu Beginn des Spiels alleine angezeigt werden ohne die Spielansicht. Wird das Spiel gestartet soll die Startansicht ausgeblendet werden und die Spielansicht eingeblendet.
+Die Startansicht sollte zu Beginn des Spiels alleine angezeigt werden ohne die Spielansicht. Wird das Spiel gestartet soll die Startansicht ausgeblendet werden und die Spielansicht eingeblendet. Der einfachheitshalber gibt dem `game-container` einen inline style mit `display: none;`.
+
+```html
+<div id="game-container" style="display: none;">
+</div>
+```
+
+Mit einem event listener auf dem `start-button` soll das Attribut `display: none;` dem `start-container` angefügt werden. Im selben Moment soll dem `game-container` der style `display: none;` wieder entfernt werden. 
+
+> Erstelle den event listener um den DOM zu laden und einen für den `start-button`. Erfasse die Elemente für den Button und die beiden Container in einer Variable.
+
+```js
+document.addEventListener('DOMContentLoaded', function() {
+    const startButton = document.getElementById("start-button")
+    const startContainer = document.getElementById("start-container")
+    const gameContainer = document.getElementById("game-container")
+    
+    startButton.addEventListener('click', function() {
+    })
+})
+```
+
+Einem Element welches in einer Variable hinterlegt ist, können auf styles direkt zugegriffen und diese verändert werden. In dem Beispiel unten wird dem `start-container` der style `display: none;` hinzugefügt während dieser dem `game-container` entfernt wird, sprich auf `flex`gesetzt wird.
+
+```js
+startButton.addEventListener('click', function() {
+	startContainer.style.display = "none"
+	gameContainer.style.display = "flex"
+})
+```
+
+Die Funktion um vom der Startansicht in die Spielansicht zu wechseln ist nun funktionsfähig, hat jedoch noch ein unschönes Verhalten. Das Textfeld für den Namen kann leer gelassen werden und das Spiel trotzdem gestartet. 
+
+> Füge das `name-field`einer Variable hinzu. Gib diese in der Konsole aus mit dem Zusatz `.value` bei einem Klick auf den Button.
+
+```js
+const nameField = document.getElementById("name-field")
+
+startButton.addEventListener('click', function() {
+	startContainer.style.display = "none"
+	gameContainer.style.display = "flex"
+	console.log(nameField.value)
+})
+```
+
+Mit dem Zugriff auf den Inhalt aus dem Textfeld kann daruaf geprüft werden. Sollte der Wert leer sein soll eine Meldung angezeigt werden, falls dieser nicht leer ist startet das Spiel.
+
+```js
+startButton.addEventListener('click', function() {
+	if(nameField.value === "") {
+		alert("Gib einen Namen ein")
+	} else {
+		startContainer.style.display = "none"
+		gameContainer.style.display = "flex"
+	}
+})
+```
+
+### Vorgefertigte Styles übernehmen
+Öffne die Datei `styles.css` aus dem Ornder support und kopiere den kompletten Inhalt und kopiere diesen in das `styles.css` des Projektes.
+
+### Alle nötigen Funnktionen definieren
+Aktuell wird der angezeigte Szenentext, die Auswahl und das Bild von statischen Daten angezeigt. Damit das Spiel gespielt und von einer Szene zur nächsten gewechselt werden kann, müssen die Daten dynamisch geladen werden. Dafür werden 4 Funktionen gebraucht um die komplette Spiellogik zu steuern.
+
+> Zum Start definiere die drei letzten HTML ELemente für das Bild, den Text und die Buttons in eine Variable.
+
+```js
+    const textElement = document.getElementById('text')
+    const optionButtonsElement = document.getElementById('option-buttons')
+    const imageElement = document.getElementById("image")
+```
+
+> Erstelle ein leeres Array mit dem Namen "scenes" sowie die vier Funktionen aus dem Beispiel unterhalb, was diese genau machen wird anschliessend erklärt.
+
+```js
+	let scenes = []
+
+	const startGame = () => {
+		// Do something
+    }
+
+    const showSceneContent = (sceneId) => {
+		// Do something
+    }
+
+    const selectOption = (option) => {
+		// Do something
+    }
+
+    const fillSceneData = () => {
+		scenes = [
+			{
+				id: 1,
+				text: "Scene Text 01"	
+			}
+		]
+    }
+```
+
+#### **startGame function**
+Die Funktion `startGame()` stösst den ganzen Text und Ablauf des Spiels an. Neben dieser Hauptfunktion wird darin zu einem späteren Zeitpunkt das Inventar initialisiert.
+
+#### **showSceneContent function**
+Die Funktion `showSceneContent(sceneId)` steuert was angezeigt werden soll in welcher Szene. Die Funktion erwartet eine `sceneId` mit der auf die aktuelle Szene zugegriffen werden kann mit dem Inhalt. Ist die korrekte Szene gefunden, füllt die Funktion die Inhalte der HTML Elemente ab damit die korrekte Szene beschrieben wird und die entsprechenden Optionen.
+
+#### **selectOption function**
+Die Funktion `selectOption()` nimmt die Auswahl entgegen, welche Option in der aktuellen Szene ausgewählt wurde. Jede Option hat automatisch die Information, welches die nächste Szene sein soll in form der nächsten `sceneId`. Damit wird innerhalb dieser Funktion erneut die `showSceneContent(sceneId)` Funktion aufgerufen mit der entsprechenden `sceneId`.
+
+#### **fillSceneDate function**
+Die Funktion `fillSceneData()` ist nur aus einem Grund eine Funktion. Der Inhalt des Array hätte eigentlich auch direkt bei der Initialisierung definiert werden können. Das hätte aber zur Folge das wir den Spielernamen nicht verwenden können, denn dieser ist zum Zeitpunkt der initialisierung noch nicht bekannt.
+
+### Befüllen der ersten Szene
+Das `scenes` Array wird gefüllt mit Objects welche die Daten der Szene beinhalten. Ein Object für eine Szene hat einen key für die `id`, die `sceneDescription` und für die `options` welches wiederum ein Array ist. Das `options` Array hat mehrere Objects mit den Informationen zu den einzelnen Optionen. Eine Option besteht zu Beginn aus den keys `optionText` und `nextScene`.  							
+
+```js
+scenes = [
+	{
+		id: 1,
+		sceneDescription: "Scene Text 01",
+		options: [
+			{
+				optionText: "Option01",
+				nextScene: 2
+			},
+			{
+				optionText: "Option02"
+			}
+		]	
+	}
+]
+```
+
+> Übernimm die Texte aus der Datei `scenes.md` für die erste Szene und erstelle eine zweite Szene ohne Inhalt.
+
+```js
+scenes = [
+	{
+		id: 1,
+		sceneDescription: "Du erwachst in einem verträumten Wald, riechst die Blumen und hörst die Vögel zwitschern.",
+		options: [
+			{
+				optionText: "Du geniesst den Moment, schliesst deine Augen wieder und schlummerst weiter.",
+				nextScene: 2
+			},
+			{
+				optionText: "Du stehst auf, streckst dich einmal durch und gehst richtung Süden."
+			}
+		]	
+	},
+	{
+		id: 2,
+		sceneDescription: "Ich bin die zweite Szene"
+	}
+]
+```
+
+> Rufe in der `startGame` Funktion die beiden Funktionen `fillSceneData()` und `showSceneContent()` auf.
+
+```js
+const startGame = () => {
+        fillSceneData()
+        showSceneContent(1)
+    }
+```
+
+### Anzeigen der Inhalte in den HTML Elementen
+
+> Definiere innerhalb der `showSceneContent` Funktion die lokale Variable `sceneContent` welche alle Informationen der aktuellen Szene beinhalten soll. Mache einen loop über das `scenes` Array und gib die Szene einmal in der Konsole aus.
+
+```js
+let sceneContent = {}
+
+scenes.forEach(scene => {
+	console.log(scene)
+})
+```
+
+> Prüfe innerhalb des loops ob die `id` der aktuellen Szene übereinstimmt mit der `sceneId` welche der Funktion mitgegeben wurde. Stimmen beide Nummern überein, setzte den Inhalt der Variable `sceneContent` auf die Informationen der aktuellen Szene im loop. Gib den Inhalt aus `sceneContent` in der Konsole aus.
+
+```js
+let sceneContent = {}
+
+scenes.forEach(scene => {
+	if(scene.id === sceneId) {
+		sceneContent = scene
+		console.log(sceneContent)
+	}
+})
+```
+
+> Zum Verständnis, ändere die `sceneId` welche in der Funktion `showSceneContent()` innerhalb der `startGame` Funktion ausgeführt wird. Ändere die ID auf 2 und führe den Code erneut aus. 
+
+> Versuche einmal die Funktion `showSceneContent()` in einfachen Worten zu erklären, was diese im aktuellen Zustand macht.
+
+Mit der korrekten Szene welche gefunden wurde, muss deren Inhalt in die HTML Elemente abgefüllt werden. In der Szene ist der key `sceneDescription`, welcher die Beschreibung der aktuellen Szene als value beinhaltet. Dieser Inhalt soll in dem HTML Element angezeigt werden welches in der variable `textElement` hinterlegt wurde.
+
+```js
+textElement.innerText = sceneContent.sceneDescription
+```
+
+> Setzte die `sceneDescription` als Text in das HTML Element nach dem loop am Ende der Funktion `showSceneContent()`.
+
+Aktuell ist noch kein Unterschied zu sehen, da der Inhalt der Szene der selbe ist, wie bereits im `index.html` direkt zwischen den tags geschrieben ist. Um einen Unterschied zu sehen, wird der eingegebenen Namen in die erste `sceneDescription` eingebunden. 
+
+```js
+{
+	id: 1,
+	sceneDescription: playerName + " du erwachst in...",
+	options: [...]	
+}
+```
+
+> Füge dem Text der `sceneDescription` innerhalb des `scenes` Array die Variable `playerName` mit.
+
+#### Verfügbare Optionen anzeigen
+Der aktuelle Stand des Projektes zeigt bereits die Beschreibung der Szene, jedoch noch nicht die verfügbaren Optionen. Jede Szene im Projekt wird eine Beschreibung haben, weshalb einfach der Inhalt des HTML Elementes ersetzt werden kann. Die Anzahl an möglichen Option hängt jedoch von der aktuellen Szene ab und zu einem späteren Zeitpunkt auch von den getroffenen Entscheidungen. Aus diesem Grund benötigen die Optionen ein wenig mehr Logik im Code. Als erstes werden die buttons mit den Optionen welche aktuell angezeigt werden, aus dem DOM entfernt. In einem zweiten Schritt wird dem DOM die neuen buttons mit den Verfügbaren Optionen angehängt. 
+
+```js
+console.log(optionButtonsElement.firstElementChild)
+```
+
+> Füge die Ausgabe in die Konsole wie oben in deinem Code ein am Ende der Funktion `showSceneContent()`.
+
+In der Konsole wird nun das erste childElement des divs mit der ID `option-buttons` angezeigt. Dieses div ist definiert in der Variable `optionButtonsElement`. Mit der Funktion `removeChild()` kann ein childElement entfernt werden.
+
+```js
+console.log(optionButtonsElement.firstChild)
+optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+```
+
+> Entferne das `firstChild` vom `optionButtonsElement` und schaue was im Spiel nach dem speichern passiert.
+
+Wir wissen das es aktuell vier Optionen hat und können aus diesem Grund den Code drei mal kopieren und haben dann alle Elemente entfernt.
+
+```js
+console.log(optionButtonsElement.firstChild)
+optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+
+console.log(optionButtonsElement.firstChild)
+optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+
+console.log(optionButtonsElement.firstChild)
+optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+
+console.log(optionButtonsElement.firstChild)
+optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+
+console.log(optionButtonsElement.firstChild)
+```
+
+> Kopiere den Code damit vier Elemente entfernt werden und gib am Ende nochmal die Ausgabe in die Konsole aus.
+
+Unterhalb des Szenentextes ist nun keine Option mehr ersichtlich da alle entfernt wurden. Die Lösung ist jedoch nicht sehr schön und hat zusätzlich Fehlerpotential. Wenn als Beispiel eine Szene nur drei Optionen hat, geben wir trotzdem dem Befehl die vierte Option zu entfernen. Da diese nicht existiert, gibt es einen Fehler in der Konsole. 
+
+> Kopiere die Zeile welche das `firstChild` entfernt ein fünftes Mal in deinem Code und schaue was in der Konsole passiert. Entferne die Zeile anschliessend wieder nachdem der Fehler angezeigt wurde.
+
+Die Logik kann mit einem loop relativ elegant gelöst werden. Die ersten vier `console.log()` Befehle geben in der Konsole das Element aus, der fünfte gibt den Wert `null` aus. Der Wert `null` wird ausgegeben weil das Element `optionButtonsElement` kein child Element mehr hat, diese wurden alle entfernt. Diese fünf Ausgaben in der Konsole können auch als ein true / false statement interpretiert werden. Die ersten vier Ausgaben zeigen ein ELement an, was bedeuted es ist `true`. Die letzte Ausgabe hat kein Element mehr und der Wert `null` wird ausgegeben und dieser wird als `false` interpretiert. 
+
+**Kurzer Exkurs while loop**
+
+Mit der Funktion `forEach()` wurde bereits ein loop gezeigt, jedoch gibt es noch weitere Möglichkeiten einen loop zu definieren. In diesem Beispiel wird der `while()` loop angeschaut. Dieser kann sehr nützlich sein, sollte jedoch mit bedacht eingesetzt werden da er prädestiniert ist infinite loops im Code einzubauen was schlussendlich zu einem crash des Codes führt.
+
+```js
+while(statement) {
+	console.log("...do something")
+}
+```
+
+Der Aufbau des while loops sagt während (while) eine gewisse Kondition (statement) zutrifft, führe den Code innerhalb aus. Sobald die Kondition nicht mehr zutrifft beende den loop. Anhand eines kleines Beispieles soll das etwas genauer erklärt werden.
+
+```js
+let number = 0
+
+while(number <= 5) {
+	console.log(number)
+	number++
+}
+```
+
+> Übernimm das Beispiel und füge den Code unterhalb des letzten `console.log()` Befehls ein.
+
+Das selbe Prinzip kann nun übernommen werden für die Optionen. Mit `while(optionButtonsElement.firstChild)` wird der code innerhalb des loops nur ausgeführt, solange das statement `true` ist. Ist das statement true bedeuted dies das sich ein child element innerhalb von `optionButtonsElement` befindet. Der auszuführende code soll das erste child element entfernen. Wurde das erste child element entfernt ist die erste iteration des loops beendet und das statement wird erneut geprüft. Hat `optionButtonsElement` noch immer ein child element, ist das statement erneut true und der code entfernt wieder das erste child element. Wurde in unserem Beispiel das vierte child element entfernt, ist das statement der fünften iteration `false`. Aus diesem Grund wird der while loop beendet und ist nun vorbereitet alle Optionen zu entfernen, egal wie viele vorhanden sind.  
+
+```js
+while(optionButtonsElement.firstChild) {
+	optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+}
+```
+
+Der erste Teil für die Optionen ist mit dem entfernen der aktuellen Optionen erledigt, als zweites sollen nun die möglichen Optionen aus der aktuellen Szene angezeigt werden.
+
+> Füge ein `console.log(sceneContent)` in deinem Code ein um erneut einen Einblick auf die aktuelle Szene zu erhalten.
+
+Das aktuelle Szenen object verfügt über einen key mit dem Namen `options` welcher als value ein Array hat mit den zur verfügung stehenden Optionen der Szene. Mit einem `forEach()` loop auf den `options` kann auf jede einzelne Option der Szene zugegriffen werden.
+
+```js
+sceneContent.options.forEach(option => {
+	console.log(option)
+	console.log(option.optionText)
+})
+```
+
+> Gib einmal den kompletten Inhalt einer Option aus mit `console.log(option)` und als zweites direkt den Text der Option mit `console.log(option.optionText)`.
+
+Als nächster Schritt muss ein neues HTML Element erstellt werden mit `document.createElement()`. Innerhalb der Klammern wird mit `'button'` definiert, das es sich dabei um einen Button handelt. Der neue Button wird mit `const newButton =` direkt einer Variable zugewiesen. Dem Button wird dann mit `newButton.innerText = option.optionText` der Text aus der Option eingefügt. Mit `newButton.classList.add('btn')` wird dem Button eine spezifische CSS Klasse mit dem Namen `'btn'` geben für das aussehen. Am Schluss wird dem Element `optionButtonsElement` der neue Button als child element angefügt mit `optionButtonsElement.appendChild(newButton)`. Dies wird so oft gemacht wie die Szene entsprechende Optionen hat.
+
+```js
+sceneContent.options.forEach(option => {
+	const newButton = document.createElement('button')
+
+	newButton.innerText = option.optionText
+	newButton.classList.add('btn')
+
+	optionButtonsElement.appendChild(newButton)
+})
+```
+
+> Für einen Test kannst du innerhalb des `scenes` Array einmal eine dritte Option der ersten Szene hinzufügen.
+
+#### Klick event auf buttons
+
+Die Optionen der Szene werden nun angezeigt, machen jedoch noch nicht viel beim einem Klick darauf. Damit die Buttons etwas ausführen bei einem Klick benötigen diese einen eventhandler der auf den Klick hört. 
+
+```js
+newButton.addEventListener('click', () => selectOption())
+```
+
+> Füge dem Button einen eventhandler an wie oben im Beispiel. Füge diesen Code unterhalb der Zeile ein wo du dem BUtton die CSS Klasse gibst.
+
+Zu sehen im Beispiel unterhalb wurde bisher bei einem eventlistener immer als zweiten Parameter die Funktion definiert und direkt darin den Code der ausgeführt werden soll. Im Beispiel oben definieren wir nicht die Funktion als zweiten Parameter, wir geben mit `() => selectOption()` direkt die Funktion mit welche aufgerufen werden soll.
+
+```js
+// Beispiel mit dem Startknopf für das Spiel
+startButton.addEventListener('click', function() {
+	// Code der ausgeführt werden soll
+	console.log("Ich wurde geklickt")
+})
+```
+
+> Füge in der Definition der Funktion `selectOption()` ein `console.log("Ich wurde geklickt")` ein und klicke auf die Buttons.
+
+Die Buttons ahben nun alle einen eventhandler und führen die Funktion `selectOption()` aus. In dieser FUnktion wird nun die Logik umgesetzt für einen Wechsel der Szene. Die Funktion erwartet einen Parameter mit der aktuellen Option damit im Code bkannt ist welche Option gewählt wurde. 
+
+> Gib beim eventhandler der Funktion die aufgerufen werden soll noch die aktuelle Option als Parameter mit `() => selectOption(option)`. In der `selectOption()` Funktion gib die gewählte Option in der Konsole aus.
+
+Der Parameter `option` ist ein object mit key / value pairs. Aktuell haben beide Optionen den Text, jedoch nur eine Option den key `nextScene`. 
+
+> Gib der ersten Option als `nextScene` den value `1` und der zweiten Option den value `2`. 
+
+Wenn du nun die erste Option wählst und weiter schlummerst, bleibst du in der ersten Szene stecken bis du dich dazu entscheidest aufzustehen mit der zweiten Option. Wird die zweite Option gewählt, soll die zweite Szene geladen werden. Erinnerst du dich noch an den Anfang, wo in der `startGame()` Funktion eine Funktion mit dem Namen `showSceneContent()` aufgerufen wird um das ganze Spiel anzustossen? Da wurde als Parameter fix die Nummer `1` mitgegeben, weil das Spiel immer mit der ersten Szene starten soll. Innerhalb der Funktion `showSceneContent()` wurde geschaut welche Szene soll dargestellt werden. Dann wurde der Inhalt der entsprechenden Szene im HTML angezeigt und neue HTML Elemente erstellt für die Buttons. Zum Schluss wurde den Buttons noch ein eventhandler gegeben damit diese geklickt werden können. Die selbe Funktion wird nun wieder aufgerufen, nur mit dem Unterschied das nicht harddcodiert die erste Szene als Parameter mitgegeben wird. Für den Parameter der Szene steht nun der Wert von `nextScene` innerhalb des `option` objects. 
+
+```js
+const selectOption = (option) => {
+	showSceneContent(option.nextScene)
+}
+```
+
+> Rufe die Funktion `showSceneContent()` innerhalb der Funktion `selectOption()` auf und gib als Paramter die nächste Szene mit, welche in der Option definiert ist.
+
+Mit dieser letzten Zeile an Code, ist der komplette Zyklus des Spiels einmal definiert worden. Das Spiel geht für den Rest des Projektes - bis auf eine kleine Ausnahme - immer wieder durch diese beiden Funktionen!
+
+#### Bilderwechsel in Szenen
+> Nimm die Beschreibung und die Optionen für die zweite Szene aus dem file `scenes.md` und füge diese deiner zweiten Szene an im `scenes` Array. Als `nextScene` gibst du der ersten Option die Nummer `3`, der zweiten Option die Nummer `4`.
+
+Der Wechsel der Szenen funktioniert bisher ganz gut, lediglich das angezeigte Bild bleibt das selbe wie im `index.html` file hinterlegt ist. Natürlich sollen sich auch die Bilder der Szene entsprechend dynamisch ändern. Dafür benötigen die Szenen ein neues key / value pair mit dem Pfad zum Bild.
+
+```js
+{
+	id: 1,
+	sceneDescription: playerName + ", du erwachst in einem verträumten Wald, riechst die Blumen und hörst die Vögel zwitschern.",
+	image: "img/image01.jpg",
+	options: [
+		{
+			optionText: "Du geniesst den Moment, schliesst deine Augen wieder und schlummerst weiter.",
+			nextScene: 1
+		},
+		{
+			optionText: "Du stehst auf, streckst dich einmal durch und gehst richtung Süden.",
+			nextScene: 2
+		}
+	]	
+}
+```
+
+> Füge der ersten Szene den key `image` hinzu und als value den Pfad zum Bild. Mache das selbe für die zweite Szene und passe den Bildnamen an zu "image02.jpg". 
+
+Im `index.html` file wurde dem `<img>` tag als Attribute der Pfad zum Bild mitgegeben. Das wurde im Attribute `src=""` gemacht und genau dieses Attribut muss nun dynamisch mit dem value von `image` abgefüllt werden. 
+
+```js
+imageElement.src = sceneContent.image
+```
+
+> Füge den Code direkt vor den while loop für die Optionen ein, nach der Zeile wo die Beschreibung der Szene gesetzt wird.
+
+#### Das Inventar des Spielers
+
+> Füge eine neue Szene deinem `scenes` Array hinzu mit der id `3`. Nimm die Beschreibung und die Optionen für die dritte Szene aus dem file `scenes.md` und füge diese hinzu. Als `nextScene` gibst du allen drei Option die Nummer `4`. Als letztes passe den Bildnamen an zu "image03.jpg".
+
+Wählt der Spieler die dritte Option und packt einen Stein in seinen Beutel, muss dieser im Verlauf des Spiels wieder verfügbar sein. Dafür verwenden wir ein object das als Inventar dient. Darin werden items verwaltet und mit einem boolean definiert ob der Spieler das item bei sich trägt oder nicht. 
+
+> Definiere vor der `startGame()` Funktion ein leeres object mit `let inventory = {}`. Innerhalb der `startGame()` Funktion soll der Inhalt des Inventars definiert werden wie im Beispiel unten.
+
+```js
+let inventory = {}
+
+const startGame = () => {
+    inventory = {
+        diamond: false
+    }
+
+	fillSceneData()
+    showSceneContent(1)
+}
+```
+
+Aktuell ist bekannt, das sich im Inventar ein Diamant aufhalten kann. Zu Beginn des Spiels ist das Inventar leer, weshalb der Wert von `diamond` initial auf `false` gesetzt wird. Wenn der Spieler sich nun entschiedet die Option zu wählen den Stein einzupacken, muss dies bei der entsprechenden Option hinterlegt sein.
+
+```js
+{
+	optionText: "Du entfernst von einer Pflanze den Stein...",
+	nextScene: 4,
+	inventoryWithThisOption: { 
+		diamond: true
+	}
+}
+```
+
+> Füge der Option den key `inventoryWithThisOption` hinzu und als value ein object wo `diamond` den Wert `true` hat.
+
+Wenn der Spieler nun diese Option auswählt, hat das `option` object mit dem gearbeitet wird, ein neues key / value pair das den neuen Stand des Inventars wiederspiegelt. Eine Sache fehlt jedoch noch, denn aktuell ist lediglich die Information vorhanden das sich das Inventar geändert hat. Mit der Information selber wird noch nicht weiter gearbeitet. Das wird in der Funktion `selectOption()` gemacht, wo der Code die ausgewählte Option erhält. Bevor mit der Zeile `showSceneContent(option.nextScene)` die nächste Szene geladen wird mit den Informationen aus der Option, soll noch das Inventar updated werden. Ob das Inventar updated werden soll, kann wieder mit dem selben Prinzip umgesetzt werden, wie bei dem while loop und dem löschen der alten Buttons. Diesmal einfach in einem if statement, wie unten im Beispiel zu sehen ist.
+
+```js
+if(option.inventoryWithThisOption) {
+	// update inventory
+}
+```
+
+Alle bisherigen Optionen haben keinen key mit dem Namen `inventoryWithThisOption`. Prüft der Code dieses statement, erhält er in diesem Fall `undefined`, weil es diesen key nicht gibt. Das wiederum wird wie bei `null` als `false` interpretiert. Sobald aber eine Option gewählt wird, welche den key hat, wird der entsprechende Wert ausgegeben. Das wird als `true` interpretiert und teilt mit, das es ein update am Inventar gibt.
+
+```js
+const selectOption = (option) => {
+	if(option.inventoryWithThisOption) {
+		inventory = option.inventoryWithThisOption
+	}
+
+	console.log(inventory)
+	showSceneContent(option.nextScene)
+}
+```
+
+> Erweitere das if statement in der Funktion um das aktuelle Inventar mit dem neuen Wert zu überschreiben und gib das Inventar auf die Konsole aus. Keine Sorgen: Du wirst nach der letzten Option in einen Fehler in der Konsole laufen, weil es noch keine neuen Szene gibt.
+
+#### Bedingte Szenen anzeigen
+
+> Füge eine neue Szene deinem `scenes` Array hinzu mit der id `4`. Nimm die Beschreibung und die Optionen für die vierte Szene aus dem file `scenes.md` und füge diese hinzu. Als `nextScene` gibst du allen Option die Nummer `5`. Als letztes passe den Bildnamen an zu "image04.jpg".
+
+Für die zweite Option, den Tauschhandel, muss erneut das Inventar updated werden. Nach dieser Option ist der Spieler wieder nichtmehr im Bestitz des Diamanten, jedoch neu hat er ein Schwert.
+
+```js
+let inventory = {}
+
+const startGame = () => {
+    inventory = {
+        diamond: false,
+		sword: false
+    }
+
+	fillSceneData()
+    showSceneContent(1)
+}
+```
+
+> Ereitere das Inventar mit dem Schwert und setze es initial auf `false.`. Ergänze auch in der Szene 3 die Option, sprich das Inventar mit `sword: false`. In der vierten Szene setzt du im Inventar den Diamanten wieder auf `false` und neu das Schwert auf `true`.
+
+Nun kann der Spieler seinen Diamanten gegen ein Schwert tauschen beim Händler. Was aber, wenn der Spieler den Stein nicht eingepackt hat oder den rechten Pfad genommen hat? Trifft dies zu, sollte lediglich die Option zur Verfügung stehen das der Spieler weiter zieht. Um das umzusetzen, benötigt jede Option eine Information ob sie angezeigt werden darf oder nicht. Umgesetzt wird dies mit einer Funktion innerhalb des objects der Option, auch bekannt unter einer Methode. Diese kann aufgerufen werden und gibt als antwort ob die Option angezeigt werden soll oder nicht.
+
+> Gehe zur ersten Szene und erweitere die erste Option mit dem key `showThisOption` und als value trägst du die Funktion `() => true` ein wie unten im Beispiel. Für die zweite Option machst du das selbe, nur anstelle von `true` schreibst du `false`.
+
+```js
+{
+	optionText: "Du geniesst den Moment und schliesst deine Augen wieder",
+	showThisOption: () => true,
+	nextScene: 1
+}
+```
+
+Wenn nun im Code die Funktion `option.showThisOption()` aufgerufen wird, gibt diese den Wert `true` oder `false` zurück. Es ist eine verkürzte Schreibweise, welche in einer Definition einer Funktion ausgeschreiben so aussehen würde wie im Beispiel unten.
+
+```js
+const showThisOption = () => {
+	return true
+}
+```
+
+> Gehe in die Funktion `showSceneContent()` bis zu der Zeile im Code wo der loop über die Optionen gemacht wird mit `sceneContent.options.forEach()`. Erstelle auf der ersten Zeile innerhalb des loops ein if statement wie in dem Beispiel unten, welches die Funktion `showThisOption()` der aktuellen Option aufruft. 
+
+```js
+if(option.showThisOption()) {
+	console.log("show this option")
+}
+```
+
+> Verschiebe den Rest des codes innerhalb des loops in das if statement wie unten im Beispiel.
+
+```js
+if(option.showThisOption()) {
+	const newButton = document.createElement('button')
+
+	newButton.innerText = option.optionText
+	newButton.classList.add('btn')
+	newButton.addEventListener('click', () => selectOption(option))
+
+	optionButtonsElement.appendChild(newButton)
+}
+```
+
+Bisher wurden alle möglichen Optionen einer Szene genommen, daraus Buttons erstellt um dem Spieler angezeigt. Mit dieser neuen Logik wird zuerst überprüft ob die Option überhaupt angezeigt werden soll, und wenn nicht wird diese erst gar nicht angezeigt. Das ist gut zu sehen da die erste Szene aktuell nur noch eine Option anzeigt. Der Grund dafür ist das `showThisOption()` der zweiten Option den Wert `false` zurück gibt.
+
+> Ändere die Funktion der zweiten Option das diese auch `true` zurück gibt. Kopiere diese Funktion in jede Option welche bisher erstellt wurde und lasse überall den Wert `true` zurück geben. Wurde das gemacht sollte wieder alles so angezeigt werden wie vorher.
+
+Bei den Optionen, welche an eine gewisse Bedingung geknüpft sind, kann nun der Wert eines items aus dem Inventar benutzt werden. Hat der Spieler den Diamanten im Inventar, so ist dessen Wert `true`. Ist er nicht im Inventar hat er den Wert `false`. Anstelle von direkt einen `true` oder `false` Wert in der Funktion `showThisOption()` zurückzugeben, geben wir den Wert des entsprechenden items im Inventar zurück.
+
+```js
+{
+	optionText: "Du betrittst den Laden...",
+	showThisOption: () => inventory.diamond,
+	nextScene: 5,
+	inventoryWithThisOption: { 
+		diamond: false,
+		sword: true
+	}
+}
+```
+
+> Erweitere in der Option wo du das Schwert tauschen kannst die Funktion zu `showThisOption: () => inventory.diamond`. 
+
+Hat der Spieler nun den Diamanten im Inventar, so wird die Option angezeigt. Hat er keinen Diamanten im Inventar wir die Option erst gar nicht angezeigt.
+
+#### "Spiel verloren" Szene
+
+#### Kampf gegen den Drachen
+
+#### Spiel gewonnen Szene
 
 
-- Logik um die beiden Container zu switchen
-- Erste Stage in Objekt packen und dynamisch machen
-	- Eingegebener Name anzeigen lassen
-- CSS rüber kopieren
-- Erster Screen Temporär deaktivieren
-- Wechsel von erster Stage zur nächsten umsetzen
-- Rest erledigen
+
+
+
+
+
+- Spiel verloren Szene
+	- Szene 6 & 0 einfügen
+- Kampf gegen den Drachen
+- Spiel gewonnen Szene
+- Cleanup (wenn nötig)
+
