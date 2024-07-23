@@ -1,10 +1,13 @@
 # ToC
 
-- [Arbeitsumgebung, Git und der Editor](#Arbeitsumgebung, Git und der Editor)
-- [Einstieg Basics](#Einstieg Basics)
+- [Arbeitsumgebung, Git und der Editor](#Arbeitsumgebung,-Git-und-der-Editor)
+- [Einstieg Basics](#Einstieg-Basics)
 - [Erweiterte Techniken](#Erweiterte-Techniken)
-- []()
-- []()
+- [Text Spiel Programmieren](#text-spiel-programmieren)
+
+<br>
+<br>
+<br>
 
 # Arbeitsumgebung, Git und der Editor
 
@@ -16,6 +19,10 @@
 - [Git](https://git-scm.com/downloads) herunterladen und installieren.
 - [GitHub](https://github.com/) Account erstellen.
 - [Repository](https://github.com/umbertobomba/textGame) öffnen und fork repo.
+
+<br>
+<br>
+<br>
 
 # Einstieg Basics
 
@@ -50,7 +57,11 @@
 
 > Kopiere den code aus dem zweiten Beispiel in das `index.html` file und speichere die Datei.
 
+<br>
+
 Bei html spricht man von tags, sobald etwas im Code innerhalb von spitzen Klammern steht. Dabei wird unterschieden zwischen dem opening- & closing tag. Als Beispiel: das div tag innerhalb des body tags beginnt mit dem opening tag `<div>` und wird geschlossen mit dem closing tag `</div>`. Es gibt Ausnahmen, jedoch in der Regel hat ein html tag immer ein opening- & closing tag. Während das Wort tag die korrekte Bezeichnung ist innerhalb des codes, wird oft auch von einem Element gesprochen. Dies bezieht sich auf die Sicht des Browsers, somit ist das selbe gemeint wenn von einem `div` Element oder tag gesprochen wird.
+
+<br>
 
 ##### Unterschiedliche HTML tags
 Neben den oben verwendeten html tags gibt es etwas über 100 weitere tags die verwendet werden können. Viele davon dienen der Semantik, einige werden zur Gruppierung benutzt und andere haben ganz spezifische Einsatzbereiche. Für dieses Projekt setzt sich der Fokus lediglich auf die vier html tags:
@@ -70,7 +81,10 @@ Neben den oben verwendeten html tags gibt es etwas über 100 weitere tags die ve
 
 > Füge die drei neuen html tags innerhalb des body tags ein und speichere die Datei.
 
+<br>
+
 ##### Kommentare in HTML
+
 Eine Zeile Code zu kommentieren ist nie falsch um zu einem späteren Zeitpunkt rasch wieder in die Logik des Projektes rein zu kommen. Neben der Dokumentation kann mit einem Kommentar auch ein Teil des Codes temporär deaktiviert werden, dabei wird von "auskommentieren" gesprochen. In HTML wird ein Kommentar auch mit einem opening & closing tag definiert. Der Start macht `<!--` und geschlossen wird ein Kommentar mit `-->`. Alles innerhalb des tags wird nicht als Code interpretiert und kann über mehrere Zeilen definiert werden.
 
 ```html
@@ -84,12 +98,18 @@ Eine Zeile Code zu kommentieren ist nie falsch um zu einem späteren Zeitpunkt r
 
 > Versuche einmal das `input` tag sowie den `button` mit einem Kommentar auszublenden.
 
+<br>
+
 ##### Das div tag und nesting (parent/child)
+
 Während das div tag im Vergleich zu anderen tags relativ simple aussieht, ist es ein wahres Arbeitstier und (fast) ein Alleskönner. Das div tag verdeutlicht sehr gut das Prinzip der Verschachtelung, in englisch auch unter nesting bekannt. Unter Vorbehalt von einigen Ausnahmen kann jedes html tag weitere tags in sich haben, dabei wird von nesting gesprochen. Das äussere html tag wird parent element genannt während alles innerhalb ein child element ist. Sehr oft werden div tags benutzt für die Organisation und Gruppierung von anderen html tags. Bei der Webentwicklung wird dafür oft der Begriff container benutzt.
 
 > Versuche einmal dein `div` tag zu verschachteln mit mehreren child elements. Die Vorteile von nesting werden im weiteren Verlauf des Projekt immer offensichtlicher, aktuell reicht es einfach zu wissen das es nesting gibt.
 
+<br>
+
 ##### Das input tag
+
 Das input tag ist das erste tag welches nicht der Methodik folgt mit einem opening- & closing tag. Auffallend ist das innerhalb der spitzen Klammern zusätzlich noch `type=text` geschrieben steht. Dabei handelt es sich um ein Attribute für ein html tag und ein tag kann mehrere solcher Attribute bekommen. In dieser Ausführung des `<input>` tags werden alle nötigen Informationen mittels Attribute mitgegeben und nicht zwischen dem opening- & closing tag.
 
 ```html
@@ -99,10 +119,16 @@ Das input tag ist das erste tag welches nicht der Methodik folgt mit einem openi
 
 > Füge die beiden tags innerhalb deines body tags ein und schau was sich ändert.
 
+<br>
+
 ##### Das button & image tag
+
 Die beiden tags benötigen noch etwas Vorwissen und kommen in den nächsten Abschnitten zum Zuge.
 
+<br>
+
 ##### Vorbereitung für nächsten Abschnitt
+
 Für die kommenden Beispiele im nächsten Abschnitt wird eine spezifische Struktur benötigt. Lösche alles innerhalb des body tags in deiner `index.html` Datei und versuche folgendes umzusetzen: 
 - Das body tag soll zwei container Elemente haben.
 - Im ersten container soll ein Element für einen Titel, einen Text sowie für ein Zitat sein.
@@ -110,10 +136,16 @@ Für die kommenden Beispiele im nächsten Abschnitt wird eine spezifische Strukt
  
 Wenn du nicht sicher bist, öffne die Datei `baseStructure.md` zur Unterstützung oder zum Abgleich.
 
+<br>
+<br>
+
 ### CSS
 CSS (Cascading Style Sheets) wird verwendet, um das Aussehen von html Elementen zu gestalten. Es ermöglicht die Kontrolle von Farben, Schriftarten, Abstände, Rahmen und Positionierung von Elementen. 
 
+<br>
+
 ##### Inline styles
+
 Das Aussehen, definiert in css wird umgangssprachlich styles genannt. Der Name inline styles kommt daher, weil die styles direkt auf der Zeile des html tags als Attribute definiert werden. 
 
 ```html
@@ -135,7 +167,10 @@ Für die bessere Übersicht können die inline styles auch auf mehrere Zeilen au
 </div>
 ```
 
+<br>
+
 ##### Das style tag
+
 Um styles zu definieren gibt es mit `style` ein eigenes HTML tag zum definieren der styles.
 
 ```html
@@ -149,7 +184,10 @@ Um styles zu definieren gibt es mit `style` ein eigenes HTML tag zum definieren 
 
 > Füge das `style` tag im `head` tag hinzu.
 
+<br>
+
 ##### CSS classes und ID's
+
 Mit dem style tag werden die styles nicht mehr inline geschrieben im html tag und somit ausgelagert. Damit ein CSS style einem Element zugewiesen werden kann, werden Klassen und ID's eingesetzt. Der Unterschied zwischen Klassen und ID's ist das ID's einzigartig sein müssen, während Klassen an so viele Elemente wie gewünscht hinzugefügt werden können. Eine Klasse oder ID wird mit einem Attribut dem HTML tag angefügt mit `class="namen-der-Klasse"` oder `id="name-der-id"`. Innerhalb des style tags wird auf eine Klasse mit einem Punkt verwiesen `.name-der-klasse` und auf eine ID mit einem hashtag `#name-der-id`.
 
 ```html
@@ -173,6 +211,8 @@ Mit dem style tag werden die styles nicht mehr inline geschrieben im html tag un
 > Innerhalb des style tag referenziere die Klasse `main-title` und gib ihr die selben styles wie vorhin inline. Speichere die Datei und schaue wie sich beide Titel anpassen.
 
 Gib den beiden div Elementen für den Text und das Zitat die Klassen `text` und `quote`.
+
+<br>
 
 ##### Farben & Schrift anpassen 
 
@@ -198,7 +238,10 @@ Gib den beiden div Elementen für den Text und das Zitat die Klassen `text` und 
 
 > Innerhalb des script tags füge die zwei neuen Klassen hinzu mit den Properties/Values wie oben beschrieben.
 
+<br>
+
 ##### Margin und padding property
+
 Standardmässig sind alle html Elemente immer nahtlos miteinander verbunden. Aktuell werden alle Elemente praktisch ohne Abstand untereinander angezeigt. Um zu zeigen, das es sich beim zweiten Titel um einen eigenständigen Abschnitt handelt würde ein wenig Abstand gut tun. Dafür kommt das Property `margin` ins Spiel welches eine Sperrzone um das HTML Element definiert.
 
 ```html
@@ -231,7 +274,10 @@ Der Text mit dem grauen Hintergrund klebt auf der rechten Seite direkt am Rand w
 
 > Erweitere die `text` Klasse mit `padding` wie im Beispiel oben.
 
+<br>
+
 ##### Unterschiedliche Schreibweisen von padding & margin
+
 Die beiden properties `margin` und `padding` können unterschiedlich geschrieben werden, sprich auf die properties kann unterschiedlich zugegriffen werden. Soll ein Wert nur in eine Richtung gelten, kann direkt auf das property mit der entsprechenden Orientierung zugegriffen werden wie z.B `margin-top`. Werden zwei oder mehr Orientierungen benötigt kommt die Schreibweise `margin: 2px 0 2px 0` zum Zuge. Dabei ist der erste Wert immer gegen oben (top) und geht im Uhrzeigersinn drum herum. Soll einer Richtung keinen Wert zugewiesen werden, wird dies mit der Ziffer 0 deklariert. Als dritte Variante kann `margin: 12px` geschrieben werden, was auf allen vier Seiten den selben Wert hinzufügt. Die gleichen Schreibweisen gelten auch für `padding`. 
 
 ```css
@@ -251,7 +297,10 @@ Die beiden properties `margin` und `padding` können unterschiedlich geschrieben
 }
 ```
 
+<br>
+
 ##### Ausgelagerte styles Datei
+
 Mit diesen vier CSS Klassen wird es bereits etwas überfüllt im `index.html` file und grundsätzlich sollen zur Übersicht und maintainability im `index.html` auch nur HTML Elemente und tags drin stehen. Für eine bessere Übersicht können die styles in ein externes file ausgelagert werden. 
 
 > Erstelle ein neues file mit dem Namen `styles.css` und kopiere die vier CSS Klassen ohne das style tag rein.
@@ -267,7 +316,10 @@ Damit der Browser die Anweisungen bekommt wie die HTML Elemente aussehen sollen,
 
 > Füge das `link` tag in deinem `index.html` file ein innerhalb des `head` tag und lösche das `style` tag.
 
+<br>
+
 ##### Pseudo-classes
+
 Pseudo Klassen in CSS sind spezielle keywords, die einer CSS Klasse hinzugefügt werden, um einen spezifischen Zustand des Elementes zu definieren. Das ermöglicht es, Elemente basierend auf ihrem Zustand zu stylen. In dem Beispiel mit `.button:hover` ist der Teil nach dem Doppelpunkt die Pseudo Klasse. Sobald ein hover effect (Mit der Maus auf das Element ohne zu klicken) stattfindet, bekommt jedes Element mit der Klasse `.button` die styles aus der Klasse `.button:hover`. Ohne den hover effect, alle Elemente haben die styles aus der normalen `.button` Klasse.  
 
 ```css
@@ -284,14 +336,26 @@ Pseudo Klassen in CSS sind spezielle keywords, die einer CSS Klasse hinzugefügt
 ```
 
 > Gib dem button tag im `index.html` die Klasse "button" und kopiere die beiden CSS Klassen in dein `styles.css` file. Navigiere anschliessend mit dem Mauszeiger auf den Button ohne zu klicken.
+
+<br>
+<br>
+
 ### JavaScript
+
 JavaScript ermöglicht es, das Verhalten von html Elementen auf einer Webseite zu steuern. Im kommenden Teil werden die basics erarbeitet um am Schluss mit den html Elementen im `index.html` zu interagieren.
 
+<br>
+
 ##### Browser devTools und die Konsole
+
 Jeder Browser verfügt über die Developer Tools, welche mit einem klick auf die rechte Maustaste geöffnet werden können oder direkt über die Taste F12. Aktuell reicht es einmal in den diversen Menüs in den devTools die Konsole zu öffnen.
 
+<br>
+
 ##### Script tag & console.log()
+
 Mit dem script tag kann wie bei den styles, javascript direkt im `index.html` file geschrieben werden welches auf der Webseite ausgeführt wird. Die Funktion `console.log()` ermöglicht es, alles was innerhalb der Klammern steht in der Konsole auszugeben. 
+
 ```html
 <head>
 	<link rel="stylesheet" href="styles.css">
@@ -304,7 +368,10 @@ Mit dem script tag kann wie bei den styles, javascript direkt im `index.html` fi
 
 > Füge das script tag im `index.html` file innerhalb des header tags ein und schaue was in der Konsole passiert.
 
+<br>
+
 ##### Ausgelagerte javascript Datei
+
 Mit der selben Begründung für die Übersicht und maintainability, sollte der javascript code nicht innerhalb des `index.html` files stehe. Aus diesem Grund wird auch der javascript code in ein externes files geschrieben und im `index.html` referenziert.
 
 ```html
@@ -317,7 +384,10 @@ Mit der selben Begründung für die Übersicht und maintainability, sollte der j
 
 > Erstelle ein neues file mit dem Namen `game.js` und kopiere die Zeile innerhalb des script tags in das neue file. Im `index.html`file passe das script tag an wie oben im Beispiel.
 
+<br>
+
 ##### Kommentare in javascript
+
 Wie auch in HTML möglich, können auch in javascript Kommentare hinterlegt werden. In javascript gibt es zwei Möglichkeiten einen Kommentar zu definieren.
 
 ```js
@@ -328,7 +398,10 @@ console.log("Hello Amy")
 und wird multi line comment genannt */
 ```
 
+<br>
+
 ##### Variablen
+
 In Variablen können Werte abgespeichert werden für die Benutzung zu einem späteren Zeitpunkt oder um Wiederholungen zu verhindern, wenn ein Wert immer wieder verwendet werden soll. In javascript gibt es drei Varianten eine Variable zu definieren:
 - `var`
 - `let`
@@ -368,7 +441,10 @@ console.log(LAST_NAME)
 
 > Füge der Variable LAST_NAME einen neuen Nachnamen zu und schau was in der Konsole passiert.
 
+<br>
+
 ##### Datentypen
+
 ```js
 // String
 console.log("Amy benutzt jetzt javascript in der konsole")
@@ -380,7 +456,10 @@ console.log(2)
 console.log(true)
 ```
 
+<br>
+
 ##### Datentypen erkennen / ausgeben
+
 Mit der Funktion `typeof()` wird erkannt um welchen Datentyp es sich handelt von dem Objekt innerhalb der Klammer. 
 
 ```js
@@ -393,7 +472,10 @@ console.log(number)
 console.log(bool)
 ```
 
+<br>
+
 ##### Operatoren für Nummern
+
 ```js
 // Addition
 console.log(2 + 2)
@@ -411,7 +493,10 @@ console.log(20 / 2)
 console.log(10 % 3)
 ```
 
+<br>
+
 ##### Operatoren für Strings
+
 Es handelt sich hier nicht direkt um einen Operator für strings, da Buchstaben nicht miteinander addiert oder multipliziert werden können. Trotzdem ist es möglich bei strings ein `+` zu verwenden um die beiden Texte miteinander zu kombinieren.
 
 ```js
@@ -436,7 +521,10 @@ console.log("Mein Name ist " + fullName + " und ich mag die Zahl " + 8)
 
 Im Beispiel oben wird zweimal die Funktion `console.log()` aufgerufen um `firstName` und dann `lastName` auf der Konsole auszugeben. Dies kann abgekürzt werden indem beide Variablen auf einer Zeile geschrieben werden, getrennt von einem Komma `console.log(firstName, lastName)`.
 
+<br>
+
 ##### Zufälliger Werte ausgeben
+
 Mit der Funktion `Math.random()` wird eine zufällige Zahl zwischen 0 und 1 generiert.
 
 ```js
@@ -464,7 +552,10 @@ let randomNumber = Math.floor(Math.random() * (max - min) + min)
 console.log(randomNumber)
 ```
 
+<br>
+
 ##### Vergleichsoperatoren
+
 Diese Art des Operator ist eine sehr häufig verwendete Methode und ein Grossteil des Programmierens würde nicht funktionieren ohne. Weshalb dies so wichtig ist, wird im nächsten Abschnitten aufgezeigt. Für jetzt ist es einfach einmal wichtig zu wissen das es diese Vergleichsoperatoren gibt und wie sie grundsätzlich funktionieren.
 
 Der Aufbau eines solchen Vergleichsoperator ist immer:
@@ -492,7 +583,10 @@ console.log(5 <= 5)
 console.log(5 >= 4)
 ```
 
+<br>
+
 ##### If / else
+
 Das Herzstück einer jeden Programmiersprache! Mit if / else kann je nach Kondition anders reagiert werden, sprich ein anderer Code Abschnitt ausgeführt werden. 
 
 Der Aufbau eines if / else statements ist folgender: 
@@ -527,7 +621,10 @@ if((costOfFood + costOfRent) < BUDGET ) {
 }
 ```
 
+<br>
+
 ##### Else if
+
 In einem if / else statement gibt es noch die Option von `else if {}`, dies wird benutzt wenn nicht nur auf eine Kondition sondern auf mehrere reagiert werden soll. 
 
 Damit erweitert sich der Aufbau des if / else statement auf folgendes: 
@@ -547,7 +644,10 @@ if((costOfFood + costOfRent) < BUDGET) {
 }
 ```
 
+<br>
+
 ##### If mit AND & OR
+
 Es besteht die Möglichkeit bei einem Statement auch auf mehrere Werte zu prüfen. Dabei kann der if block ausgeführt werden wenn z.B nur einer der Werte stimmt oder es müssen zwingend alle Werte true sein.
 
 ```js
@@ -573,7 +673,10 @@ if(person01 === "Amy" && person02 === "Gil") {
 }
 ```
 
+<br>
+
 ##### If statement ohne else block
+
 Oft wird der else block nicht benötigt und ein if / else wird nur verwendet zur Überprüfung ob ein gewisses Ereignis eintrifft. Dafür kann der else block auch komplett weg gelassen werden.
 
 ```js
@@ -593,7 +696,10 @@ if(score > highScore) {
 }
 ```
 
+<br>
+
 ##### Funktionen
+
 Funktionen ermöglichen es wiederverwendbaren Code zu schreiben. Mit Funktionen ist der Code lesbarer, die Wartung wird erleichtert und Wiederholungen werden vermieden. Eine Funktion kann wieder auf mehrere Varianten geschrieben werden. 
 
 Einmal als sogenannte "arrow function" wo diese wie bei der definition einer variable mit `const name =` beginnt und auf der rechten Seite des Gleichheitszeichens wird die Funktion definiert.
@@ -614,7 +720,10 @@ function name() {
 
 Es gibt noch andere Möglichkeiten, diese werden aber für dieses Projekt nicht benötigt. In den kommenden Beispielen und im Spiel werden ausschliesslich "arrow functions" eingesetzt bis auf eine Ausnahme.
 
+<br>
+
 ##### Funktionen ausführen
+
 Eine Funktion wird immer aufgerufen mit dem Namen der Funktion, gefolgt von zwei Klammern. Im Beispiel unten wird die Funktion mit `sayHello()` aufgerufen und kann so oft verwendet werden wie gewünscht. Sollte sich der der Text nun ändern zu "Aloah Amy", kann dies in der Funktion einmalig geändert werden. Überall im Code wo die Funktion aufgerufen wird, ist der Text nun automatisch angepasst.
 
 ```js
@@ -630,7 +739,10 @@ sayHello()
 
 > Erstelle die Funktion wie oben im Beispiel und rufe diese mehrfach auf.
 
+<br>
+
 ##### Parameter für Funktionen
+
 Beim Aufruf einer Funktion können Parameter mitgeschickt werden innerhalb der Klammern. Dies ermöglicht eine dynamische Funktion, welche Code ausführt mit Parameter welche der Funktion mitgegeben werden. 
 Die `sayHello` Funktion wird erweitert dem Parameter `name` innerhalb der Klammern. Dabei handelt es sich um einen Platzhalter und kann wie eine Variable angesehen werden, welche jedoch nicht zuerst definiert werden muss. Innerhalb der Funktion kann zu jeder Zeit auf den Parameter `name` zugegriffen werden und erhält den Wert, welcher der Funktion beim Aufruf mitgeschickt wurde.
 
@@ -677,7 +789,10 @@ const sayHello = (name, age) => {
 sayHello("Gilby", 25)
 ```
 
+<br>
+
 ##### Wert zurückgeben aus Funktion
+
 Eine Funktion kann nicht nur benutzt werden um einfach einen Codeblock auszuführen, die Funktion kann auch einen Wert zurückgeben welcher in eine Variable gespeichert wird. Wichtig dabei ist das Wort `return` was aus der Funktion etwas ausgibt.
 
 ```js
@@ -693,7 +808,10 @@ let addedNumbers = myFunction(2, 5)
 console.log(addedNumbers)
 ```
 
+<br>
+
 ##### Programmiere einen simplen Taschenrechner
+
 Mit allem was bisher erarbeitet wurde kann ein simpler Taschenrechner programmiert werden. Folgende Anforderungen sollen dabei erfüllt werden:
 
 - Erstelle eine Funktion welche zwei Zahlen entgegen nimmt.
@@ -702,7 +820,10 @@ Mit allem was bisher erarbeitet wurde kann ein simpler Taschenrechner programmie
 
 Eine Lösungsvariante findest du im file `calculator.md`.
 
+<br>
+
 ##### Arrays
+
 Arrays sind spezielle Datenstrukturen, die es ermöglichen, mehrere Werte in einer einzigen Variablen zu speichern. Diese Werte können beliebige Datentypen sein wie Nummern, Strings, Objekte (Dazu im nächsten Abschnitt mehr) oder sogar andere Arrays. Ein Array wird mit eckigen Klammern `[]` erstellt, und die Werte innerhalb sind durch Kommas getrennt.
 
 ```js
@@ -727,7 +848,10 @@ Ein Array bringt neben der Funktion `arrayNamen.length`  einige weiter Funktione
 - `shift()` & `unshift()`
 - `forEach()` & `map()`
 
+<br>
+
 ##### Array push & pop
+
 ```js
 let fruits = ["Banana", "Apple"]
 console.log(fruits)
@@ -741,7 +865,10 @@ fruits.pop()
 console.log(fruits)
 ```
 
+<br>
+
 ##### Array shift & unshift
+
 ```js
 let fruits = ["Banana", "Apple"]
 console.log(fruits)
@@ -755,7 +882,10 @@ fruits.unshift("Cherries")
 console.log(fruits)
 ```
 
+<br>
+
 ##### Array forEach
+
 Die Funktion `forEach` ermöglicht es über die Werte innerhalb eines Array zu iterieren und für jedes einzelne Element Code auszuführen. Ein kurzer Fokus auf das Wort `fruit` innerhalb der Klammern von `fruits.forEach()`. Dieses Wort ist frei wählbar und funktioniert im Grundprinzip gleich wie bei den Parameter einer Funktion. Was auch immer der Wert innerhalb des Array ist in der aktuellen iteration, wird darin gespeichert und ist innerhalb der geschweiften Klammern benutzbar.
 
 ```js
@@ -777,7 +907,10 @@ fruits.forEach((fruit, index) => {
 })
 ```
 
+<br>
+
 ##### Object
+
 Ein Object ist gleich wie das Array eine spezielle Datenstruktur um mehrere Werte in einer Variable zu speichern. Ein Object wird mit geschweiften Klammern `{}` erstellt, und die Werte innerhalb sind auch durch Kommas getrennt. Der Unterschied zum Array ist jedoch das ein Wert eines Objects immer aus einem `key:value` pair besteht. Im Beispiel unten ist der erste Wert `brand:"Toyota"` und dabei ist `brand` der key und `"Toyota"` der dazugehörige value. Ein Zugriff oder die Ausgabe aller Werte eines Objects ist möglich mit `console.log(car)`. Durch das `key:value` pair kann aber auch auf ganz spezifische Werte zugegriffen werden wie z.B. mit `console.log(car.color)`. 
 
 ```js
@@ -811,7 +944,10 @@ car.honk()
 
 Etwas neues innerhalb der Funktion ist der Begriff `this` was lokal in der Funktion auf den aktuellen Kontext verweist. Mit `this` referenziert die Funktion auf das aktuelle Object und ersetzt den Namen des Objects. In der Ausgabe in die Konsole könnte `this.brand` auch mit `car.brand` ersetzt werden und hätte das selbe Ergebnis. Für die maintainability und Flexibilität wird `this` verwendet, somit funktioniert der Code auch noch falls das Object umbenannt werden würde in z.B. "vehicle". 
 
+<br>
+
 ##### Ein Object iterieren / loopen
+
 Auch in einem Object kann ein loop gemacht werden wie bei einem Array. Dieser wird jedoch etwas anders gemacht und wirkt auf den ersten Blick etwas komplexer. 
 
 ```js
@@ -848,7 +984,10 @@ for(let key in car) {
 
 Der letzte Teil der nun noch fehlt ist das if statement `if(car.hasOwnProperty(key))`. Es ist eine Best Practice beim Iterieren über Objects in javascript und alle weiteren Information dazu würden den Rahmen dieses Projektes sprengen.
 
+<br>
+
 ##### Objects in Arrays und umgekehrt
+
 Ein Object kann ein oder mehrere Arrays beinhalten sowie ein Array auch Objects beinhalten kann.
 
 ```js
@@ -886,7 +1025,13 @@ fruits.forEach(fruit => {
 	console.log(fruit)
 })
 ```
+
+<br>
+<br>
+<br>
+
 # Erweiterte Techniken
+
 Erstelle einen neuen Ordner mit dem Namen "02_Advanced" und erstelle darin ein neues `index.html`, `game.js` und `styles.css` file. Für das `index.html` kann die Vorlage von unten verwendet werden.
 
 ```html
@@ -903,7 +1048,10 @@ Erstelle einen neuen Ordner mit dem Namen "02_Advanced" und erstelle darin ein n
 </html>
 ```
 
+<br>
+
 ### Event listener auf button
+
 Damit bei einem klicken auf einen Button javascript ausgeführt werden kann, muss ein event listener erstellt werden. Dieser hört (listen) oder reagiert auf einen spezifischen event und führt dann Code aus. In dem Beispiel mit dem Button reagiert der Code auf den event eines Klicks. 
 
 ```html
@@ -994,7 +1142,10 @@ startButton.addEventListener('click', function() {
 })
 ```
 
+<br>
+
 ### HTML child und parent Elemente anzeigen
+
 In javascript ist es möglich das parent oder child Element anzuzeigen aus der Sicht des aktuellen Elements. Mit `parentElement` auf das Element der Variable `startButton` wird das parent `div` des Containers angezeigt.
 
 ```js
@@ -1043,7 +1194,10 @@ startButton.addEventListener('click', function() {
 })
 ```
 
+<br>
+
 ### HTML Elemente manipulieren
+
 Einem HTML Element können beliebig child Elemente hinzugefügt und wieder entfernt werden. Für dieses Beispiel soll der erste Container drei Buttons haben und der zweite soll leer sein. Im javascript file soll zum Start nur der leere event listener auf dem DOM sein.
 
 ```html
@@ -1151,7 +1305,10 @@ removeButton.disabled = false
 
 > Aktiviere und deaktiviere die Buttons nachdem der  `forEach` loop aber noch innerhalb des event listeners
 
+<br>
+
 ### Advanced Challenge
+
 Als letzte Challenge bevor die Umsetzung des Spiels beginnt soll die Logik umgesetzt werden, das mit den beiden Buttons Früchte der Liste hinzugefügt und entfernt werden können.
 
 Acceptance criteria:
@@ -1176,12 +1333,20 @@ const allFruits = [
 
 Für Unterstützung oder zum Abgleich steht eine Mögliche Lösung in der Datei `fruitList.md` zur Verfügung.
 
+<br>
+<br>
+<br>
+
 # Text Spiel programmieren
+
 Mit diesem Projekt wird ein Spiel programmiert, welches dem Spieler in Textform eine Szene beschreibt und Optionen zur Verfügung stellt, wie der Spieler sich entscheiden möchte. Der Spieler geht so durch mehrere Szenen bis er (vielleicht) das Ende des Spiels erreicht. Je nach Auswahl in einer Szene kann dies Auswirkungen auf die Optionen der nächsten Szenen haben oder gar komplette Szenen überspringen. 
 
 > WICHTIG: Benutze bei den Klassen und ID's aus der Anleitung unbedingt die exakten Namen damit die im voraus erstellten CSS styles passen.
 
+<br>
+
 ### Setup & HTML Struktur
+
 Erstelle einen neuen Ordner mit dem Namen "TextGame" und erstelle darin eine `index.html`, `game.js` und `styles.css` Datei. Kopiere den Inhalt des files `baseIndex.html` aus dem "support" Ordner in dein `index.html`. 
 
 Erstelle innerhalb des `body` tags ein `div` mit der Klasse `main-container`. Erstelle darin zwei weitere `div` Elemente mit der ID `start-container`, respektiv `game-container`.
@@ -1234,7 +1399,10 @@ Im `div` mit der ID `option-buttons` erstelle einen `button` mit der Klasse `btn
 </div>
 ```
 
+<br>
+
 ### Übersicht des user interface
+
 Alle Elemente zur Anzeige des Spiels sind nun im `index.html` bereits erstellt, jedoch noch ohne Inhalte. Zum besseren Verständnis werden die einzelnen Elemente und deren Aufgaben aufgezeigt.
 
 `<div class="main-container">`
@@ -1258,7 +1426,10 @@ Der Text welcher die aktuelle Szene beschreibt.
 `<div id="option-buttons" class="btn-grid">`
 Das Element welche die möglichen Option für den Spieler anzeigt (z.B "Gehe nach Links" oder "Gehe nach Rechts")
 
+<br>
+
 ### Statische Inhalte füllen
+
 Erstelle einen neuen Ordner mit dem Namen `img` und kopiere alle Bilder welche im Ordner support/images sind.
 
 Aktuell ist ein `img` tag vorhanden im `index.html` welches jedoch noch kein Bild anzeigt. Dafür muss ein Attribut hinzugefügt werden mit dem Pfad zum Bild das angezeigt werden soll. Das Attribut `src` steht für source und zeigt den Pfad zum Bild an. 
@@ -1269,7 +1440,10 @@ Aktuell ist ein `img` tag vorhanden im `index.html` welches jedoch noch kein Bil
 
 Öffne die Datei `scenes.md` im Ordner support und kopiere den Text der ersten Szene in das `div` Element mit der ID `text`. Ersetze in den ersten beiden Buttons für die Optionen die Optionstexte aus der ersten Szene.
 
+<br>
+
 ### Startansicht von Spielansicht trennen
+
 Die Startansicht sollte zu Beginn des Spiels alleine angezeigt werden ohne die Spielansicht. Wird das Spiel gestartet soll die Startansicht ausgeblendet werden und die Spielansicht eingeblendet. Der einfachheitshalber gibt dem `game-container` einen inline style mit `display: none;`.
 
 ```html
@@ -1328,10 +1502,16 @@ startButton.addEventListener('click', function() {
 })
 ```
 
+<br>
+
 ### Vorgefertigte Styles übernehmen
+
 Öffne die Datei `styles.css` aus dem Ornder support und kopiere den kompletten Inhalt und kopiere diesen in das `styles.css` des Projektes.
 
+<br>
+
 ### Alle nötigen Funnktionen definieren
+
 Aktuell wird der angezeigte Szenentext, die Auswahl und das Bild von statischen Daten angezeigt. Damit das Spiel gespielt und von einer Szene zur nächsten gewechselt werden kann, müssen die Daten dynamisch geladen werden. Dafür werden 4 Funktionen gebraucht um die komplette Spiellogik zu steuern.
 
 > Zum Start definiere die drei letzten HTML ELemente für das Bild, den Text und die Buttons in eine Variable.
@@ -1369,19 +1549,34 @@ Aktuell wird der angezeigte Szenentext, die Auswahl und das Bild von statischen 
     }
 ```
 
+<br>
+
 #### **startGame function**
+
 Die Funktion `startGame()` stösst den ganzen Text und Ablauf des Spiels an. Neben dieser Hauptfunktion wird darin zu einem späteren Zeitpunkt das Inventar initialisiert.
 
+<br>
+
 #### **showSceneContent function**
+
 Die Funktion `showSceneContent(sceneId)` steuert was angezeigt werden soll in welcher Szene. Die Funktion erwartet eine `sceneId` mit der auf die aktuelle Szene zugegriffen werden kann mit dem Inhalt. Ist die korrekte Szene gefunden, füllt die Funktion die Inhalte der HTML Elemente ab damit die korrekte Szene beschrieben wird und die entsprechenden Optionen.
 
+<br>
+
 #### **selectOption function**
+
 Die Funktion `selectOption()` nimmt die Auswahl entgegen, welche Option in der aktuellen Szene ausgewählt wurde. Jede Option hat automatisch die Information, welches die nächste Szene sein soll in form der nächsten `sceneId`. Damit wird innerhalb dieser Funktion erneut die `showSceneContent(sceneId)` Funktion aufgerufen mit der entsprechenden `sceneId`.
 
+<br>
+
 #### **fillSceneDate function**
+
 Die Funktion `fillSceneData()` ist nur aus einem Grund eine Funktion. Der Inhalt des Array hätte eigentlich auch direkt bei der Initialisierung definiert werden können. Das hätte aber zur Folge das wir den Spielernamen nicht verwenden können, denn dieser ist zum Zeitpunkt der initialisierung noch nicht bekannt.
 
+<br>
+
 ### Befüllen der ersten Szene
+
 Das `scenes` Array wird gefüllt mit Objects welche die Daten der Szene beinhalten. Ein Object für eine Szene hat einen key für die `id`, die `sceneDescription` und für die `options` welches wiederum ein Array ist. Das `options` Array hat mehrere Objects mit den Informationen zu den einzelnen Optionen. Eine Option besteht zu Beginn aus den keys `optionText` und `nextScene`.  							
 
 ```js
@@ -1435,6 +1630,8 @@ const startGame = () => {
     }
 ```
 
+<br>
+
 ### Anzeigen der Inhalte in den HTML Elementen
 
 > Definiere innerhalb der `showSceneContent` Funktion die lokale Variable `sceneContent` welche alle Informationen der aktuellen Szene beinhalten soll. Mache einen loop über das `scenes` Array und gib die Szene einmal in der Konsole aus.
@@ -1484,7 +1681,10 @@ Aktuell ist noch kein Unterschied zu sehen, da der Inhalt der Szene der selbe is
 
 > Füge dem Text der `sceneDescription` innerhalb des `scenes` Array die Variable `playerName` mit.
 
+<br>
+
 #### Verfügbare Optionen anzeigen
+
 Der aktuelle Stand des Projektes zeigt bereits die Beschreibung der Szene, jedoch noch nicht die verfügbaren Optionen. Jede Szene im Projekt wird eine Beschreibung haben, weshalb einfach der Inhalt des HTML Elementes ersetzt werden kann. Die Anzahl an möglichen Option hängt jedoch von der aktuellen Szene ab und zu einem späteren Zeitpunkt auch von den getroffenen Entscheidungen. Aus diesem Grund benötigen die Optionen ein wenig mehr Logik im Code. Als erstes werden die buttons mit den Optionen welche aktuell angezeigt werden, aus dem DOM entfernt. In einem zweiten Schritt wird dem DOM die neuen buttons mit den Verfügbaren Optionen angehängt. 
 
 ```js
@@ -1528,6 +1728,8 @@ Unterhalb des Szenentextes ist nun keine Option mehr ersichtlich da alle entfern
 
 Die Logik kann mit einem loop relativ elegant gelöst werden. Die ersten vier `console.log()` Befehle geben in der Konsole das Element aus, der fünfte gibt den Wert `null` aus. Der Wert `null` wird ausgegeben weil das Element `optionButtonsElement` kein child Element mehr hat, diese wurden alle entfernt. Diese fünf Ausgaben in der Konsole können auch als ein true / false statement interpretiert werden. Die ersten vier Ausgaben zeigen ein ELement an, was bedeuted es ist `true`. Die letzte Ausgabe hat kein Element mehr und der Wert `null` wird ausgegeben und dieser wird als `false` interpretiert. 
 
+<br>
+
 **Kurzer Exkurs while loop**
 
 Mit der Funktion `forEach()` wurde bereits ein loop gezeigt, jedoch gibt es noch weitere Möglichkeiten einen loop zu definieren. In diesem Beispiel wird der `while()` loop angeschaut. Dieser kann sehr nützlich sein, sollte jedoch mit bedacht eingesetzt werden da er prädestiniert ist infinite loops im Code einzubauen was schlussendlich zu einem crash des Codes führt.
@@ -1550,6 +1752,8 @@ while(number <= 5) {
 ```
 
 > Übernimm das Beispiel und füge den Code unterhalb des letzten `console.log()` Befehls ein.
+
+<br>
 
 Das selbe Prinzip kann nun übernommen werden für die Optionen. Mit `while(optionButtonsElement.firstChild)` wird der code innerhalb des loops nur ausgeführt, solange das statement `true` ist. Ist das statement true bedeuted dies das sich ein child element innerhalb von `optionButtonsElement` befindet. Der auszuführende code soll das erste child element entfernen. Wurde das erste child element entfernt ist die erste iteration des loops beendet und das statement wird erneut geprüft. Hat `optionButtonsElement` noch immer ein child element, ist das statement erneut true und der code entfernt wieder das erste child element. Wurde in unserem Beispiel das vierte child element entfernt, ist das statement der fünften iteration `false`. Aus diesem Grund wird der while loop beendet und ist nun vorbereitet alle Optionen zu entfernen, egal wie viele vorhanden sind.  
 
@@ -1588,6 +1792,8 @@ sceneContent.options.forEach(option => {
 ```
 
 > Für einen Test kannst du innerhalb des `scenes` Array einmal eine dritte Option der ersten Szene hinzufügen.
+
+<br>
 
 #### Klick event auf buttons
 
@@ -1631,7 +1837,10 @@ const selectOption = (option) => {
 
 Mit dieser letzten Zeile an Code, ist der komplette Zyklus des Spiels einmal definiert worden. Das Spiel geht für den Rest des Projektes - bis auf eine kleine Ausnahme - immer wieder durch diese beiden Funktionen!
 
+<br>
+
 #### Bilderwechsel in Szenen
+
 > Nimm die Beschreibung und die Optionen für die zweite Szene aus dem file `scenes.md` und füge diese deiner zweiten Szene an im `scenes` Array. Als `nextScene` gibst du der ersten Option die Nummer `3`, der zweiten Option die Nummer `4`.
 
 Der Wechsel der Szenen funktioniert bisher ganz gut, lediglich das angezeigte Bild bleibt das selbe wie im `index.html` file hinterlegt ist. Natürlich sollen sich auch die Bilder der Szene entsprechend dynamisch ändern. Dafür benötigen die Szenen ein neues key / value pair mit dem Pfad zum Bild.
@@ -1663,6 +1872,8 @@ imageElement.src = sceneContent.image
 ```
 
 > Füge den Code direkt vor den while loop für die Optionen ein, nach der Zeile wo die Beschreibung der Szene gesetzt wird.
+
+<br>
 
 #### Das Inventar des Spielers
 
@@ -1721,6 +1932,8 @@ const selectOption = (option) => {
 ```
 
 > Erweitere das if statement in der Funktion um das aktuelle Inventar mit dem neuen Wert zu überschreiben und gib das Inventar auf die Konsole aus. Keine Sorgen: Du wirst nach der letzten Option in einen Fehler in der Konsole laufen, weil es noch keine neuen Szene gibt.
+
+<br>
 
 #### Bedingte Szenen anzeigen
 
@@ -1808,21 +2021,196 @@ Bei den Optionen, welche an eine gewisse Bedingung geknüpft sind, kann nun der 
 
 Hat der Spieler nun den Diamanten im Inventar, so wird die Option angezeigt. Hat er keinen Diamanten im Inventar wir die Option erst gar nicht angezeigt.
 
-#### "Spiel verloren" Szene
+<br>
+
+#### Alternativer Weg zum Spielende
+
+> Füge eine neue Szene deinem `scenes` Array hinzu mit der id `5`. Nimm die Beschreibung und die Optionen für die fünften Szene aus dem file `scenes.md` und füge diese hinzu. Als `nextScene` gibst du allen Option die Nummer `6`. Als letztes passe den Bildnamen an zu "image05.jpg".
+
+> Für die Option mit dem Schwert ziehen, prüfe ob das Schwert im Inventar ist und gib diese Option nur frei, wenn der Spieler auch ein Schwert im Inventar hat.
+
+In dieser Szene wollen wir einen alternativen Weg definieren, wie das Spiel "gewonnen" werden kann und der Kampf gegen den Drachen komplett umgangen wird. Die Optionen, bei denen der Spieler das Schloss betritt, ist der normale Weg durchs Spiel und die nächste Szene soll die Nummer `6` sein. Der alternative Weg bildet sich bei der Option wo der Spieler auf der Lichtung rastet. Der Spieler ist so erschöpft, das er bereits nach kurzer Zeit einschläft. Da es sich um einen "Traumwächter Drachen" handelt, besucht dieser den Spieler in seinem Traum während er schläft. Der Spieler ist in keinster Weise dem Drachen gewachsen in der Traumwelt, besonders weil dieser hier Zugriff auf Magie hat. Der Drache verzaubert den Spieler mit seinem Immerschlaf Zauber, worauf der Spieler im ewigen Tiefschlaf ist bist zu seinem Tode. Der Spieler hat also mit dieser Option das Spiel verloren und muss von vorne starten. Es sei denn, der Spieler hat seinen Diamanten nicht gegen das Schwert getauscht. Hat er den Diamanten noch immer bei sich, reflektiert dieser den Zauber und steckt den Drachen in den ewigen Tiefschlaf. Damit hat der Spieler gewonnen und kommt als nächstes direkt zur "Spiel gewonnen" Szene. 
+
+> Füge eine neue Szene deinem `scenes` Array hinzu mit der id `20`. Nimm die Beschreibung und die Optionen für die Szene 20 aus dem file `scenes.md` und füge diese hinzu. Als `nextScene` gibst du beiden Option temporär die Nummer `0`. Passe die zweite Option so an das diese nur angezeigt wird, wenn der Spieler den Diamanten im Inventar hat. Als letztes passe den Bildnamen an zu "image20.jpg".
+
+> In der Szene mit der Nummer `5`, passe die nächste Szene der letzen Option an und gib dieser die Nummer `20`.
+
+Die Nummer der Szene wurde absichtlich auf `20` gesetzt, damit dieser alternative Weg nicht zwischen den Szenen des regulären Weges steht. Der alternative Weg ist somit umgesetzt, die Szenen zu deren die beiden Optionen führen, werden später umgesetzt. Wir kommen also nochmals zu dieser Szene zurück zu einem späteren Zeitpunkt.
+
+<br>
 
 #### Kampf gegen den Drachen
 
-#### Spiel gewonnen Szene
+Kümmern wir uns wieder um den regulären Weg und dem Kampf gegen den Drachen. Dafür benötigen wir zwei Szenen: Einmal eine Szene kurz vor dem Kampf, wo der Spieler die Option hat in den Kampf zu gehen oder den Rückzug anzusetzen. Die zweite Szene ist der Kampf selber, in dem anschliessend entschieden wird ob der Drache besiegt wurde oder der Spieler.
 
+> Füge eine neue Szene deinem `scenes` Array hinzu mit der id `6`. Nimm die Beschreibung und die Optionen für die Szene 6 aus dem file `scenes.md` und füge diese hinzu. Als `nextScene` gibst du allen Option die Nummer `7`. Passe die Option mit dem Schwert so an, das diese nur angezeigt wird, wenn der Spieler das Schwert im Inventar hat. Als letztes passe den Bildnamen an zu "image06.jpg".
 
+> Füge eine neue Szene deinem `scenes` Array hinzu mit der id `7`. Nimm die Beschreibung und die Optionen für die Szene 7 aus dem file `scenes.md` und füge diese hinzu. Als `nextScene` gibst du allen Option die Nummer `0`. Passe die Option mit dem Schwert so an, das diese nur angezeigt wird, wenn der Spieler das Schwert im Inventar hat. Behalte den Bildnamen für diese Szene bei "image06.jpg".
 
+Für den Kampf gegen den Drachen lassen wir zufällige Nummern entschieden ob der Spieler trifft oder nicht, sprich ob er gewinnt oder nicht. Dabei soll natürlich die Verwendung des Schwertes die Chancen für den Spieler etwas erhöhen. 
 
+> Erstelle eine neue Funktion mit dem Namen `battleWithDragon` welche eine Ausgabe auf die Konsole macht mit `console.log("Kampf gegen den Drachen")`. Erstelle diese nach der `selectOption` Funktion und noch bevor der `fillSceneData`.
 
+```js
+const battleWithDragon = () => {
+	console.log("Kampf gegen den Drachen")
+}
+```
 
+> Aus Testzwecken rufe die Funktion innerhalb von `startGame` auf. Somit musst du nicht jedesmal das komplette Spiel durchspielen um eine Änderung zu sehen. Sobald du das Spiel startest siehst du in der Konsole was dein Code macht. 
 
-- Spiel verloren Szene
-	- Szene 6 & 0 einfügen
-- Kampf gegen den Drachen
-- Spiel gewonnen Szene
-- Cleanup (wenn nötig)
+```js
+const startGame = () => {
+        inventory = {
+            diamond: false,
+            sword: false
+        }
+        
+		battleWithDragon()
 
+        fillSceneData()
+        showSceneContent(1)
+    }
+```
+
+Für den Drachen und den Spieler wird jeweils eine zufällige Zahl generiert. Ist die Zahl des Spielers grösser oder gleich wie die Zahl des Drachens, so gewinnt der Spieler. Trifft dies nicht zu so gewinnt der Drache. Mit `Math.floor(Math.random() * 10) + 1` wird eine Zufällige Zahl zwischen 1 - 10 generiert. 
+
+> Erstelle eine Variable mit dem Namen `dragonAttack` und eine mit dem Namen `playerAttack`. Weise den beiden Variablen die zufällige Nummer zu und gib die Resultate in der Konsole aus.
+
+```js
+const battleWithDragon = () => {
+	console.log("Kampf gegen den Drachen")
+
+	let dragonAttack = Math.floor(Math.random() * 10) + 1
+	let playerAttack = Math.floor(Math.random() * 10) + 1
+
+	console.log("Der Drache würfelt: " + dragonAttack)
+	console.log("Der Spieler würfelt: " + playerAttack)
+}
+```
+
+> Mache ein if statement vor den Ausgaben in die Konsole, das prüft ob das Schwert im Inventar ist. Wenn dies zutrifft addiere die zufälligen Nummer des Spielers mit 2 als Bonus. 
+
+```js
+const battleWithDragon = () => {
+	console.log("Kampf gegen den Drachen")
+
+	let dragonAttack = Math.floor(Math.random() * 10) + 1
+	let playerAttack = Math.floor(Math.random() * 10) + 1
+
+	if(inventory.sword) {
+		playerAttack += 2
+		console.log("player attacks with sword")
+	}
+
+	console.log("Der Drache würfelt: " + dragonAttack)
+	console.log("Der Spieler würfelt: " + playerAttack)
+}
+```
+
+> Für einen Test kannst du in der `startGame` Funktion das `inventory` object anpassen und den Wert des Schwertes auf `true` setzen. Setze nach dem Test den Wert wieder zurück auf `false`.
+
+> Erweitere die Funktion mit einem weiteren if statement, welches prüft ob der Spieler gewonnen hat oder der Drache. Gib entsprechend das Resultat in der Konsole aus.
+
+```js
+const battleWithDragon = () => {
+	console.log("Kampf gegen den Drachen")
+
+	let dragonAttack = Math.floor(Math.random() * 10) + 1
+	let playerAttack = Math.floor(Math.random() * 10) + 1
+
+	if(inventory.sword) {
+		playerAttack += 2
+	}
+
+	console.log("Der Drache würfelt: " + dragonAttack)
+	console.log("Der Spieler würfelt: " + playerAttack)
+
+	if(playerAttack >= dragonAttack) {
+		console.log("Der Spieler hat den Drachen besiegt")
+	} else {
+		console.log("Der Drache hat gewonnen!")
+	}
+}
+```
+
+Die Funktion für den Kampf gegen den Drachen ist soweit umgesetzt, das ein Gewinner dabei raus kommt. Nun muss die Logik noch so angepasst werden, das die Funktion `battleWithDragon` im richtigen Moment aufgerufen wird. Als zweiten Schritt muss die Information wer gewonnen hat noch ins Spiel miteinfliessen.
+
+Gestartet wird mit dem ersten Teil, dem Abfangen wann der Kampf stattfindet und die Funktion ausgeführt werden muss. Dafür haben wir bereits die Optionen der Szene 7 wo der Kampf statt findet vorbereitet. Beide Optionen in der Kampfszene haben als nächste Szene die Nummer `0`, welche es jedoch nicht gibt. Die Nummer kann in der `selectOption` abgefangen werden und mit einem if statement wird gesteuert was ausgeführt werden soll.
+
+> Schreibe ein if statement nach der Logik für das Inventar innerhalb der `selectOption` Funktion. Ist der Wert von `nextScene` die Nummer `0` so soll die Funktion `battleWithDragon` aufgerufen werden. Ist der Wert nicht `0`, dann soll die die Funktion `showSceneContent()` wie bisher aufgerufen werden.
+
+```js
+const selectOption = (option) => {
+	if(option.inventoryWithThisOption) {
+		inventory = option.inventoryWithThisOption
+	}
+
+	if(option.nextScene === 0) {
+		battleWithDragon()
+	} else {
+		showSceneContent(option.nextScene)
+	}        
+}
+```
+
+Wenn alles richtig gemacht wurde, sollte alles weiterhin so funktionieren wie bisher. In der Kampfszene wird anschliessend der Sieger in die Konsole ausgegeben.
+
+In der Kampfszene entscheidet sich, ob der Spieler gewinnt oder nicht. Für beide Situationen gibt es eine letzte Szene, welche im nächsten Abschnitt gemacht wird. Was aktuell aber noch fehlt ist die Logik, wie das Spiel nach der Kampfszene zur letzten Szene wechselt. Am Grundprinzip wie die gewünschte Szene angezeigt wird ändert sich nichts und wird weiterhin über die Funktion `showSceneContent()` gehandhabt. Die Funktion `showSceneContent()` benötigt als Parameter die `sceneId` in Form einer Nummer, die besagt welche Szene als nächstes angezeigt werden soll. Somit benötigen wir in der Funktion `selectOption`, im if statement wo die Funktion für den Kampf aufgerufen wird, die entsprechende Nummer der Szene welche aufgerufen werden soll. Haben wir diese Nummer, so kann die Funktion `showSceneContent()` aufgerufen werden und als Parameter die finale `sceneId` mitgegeben werden. Die "verloren" Szene wird die ID `9` haben und die "gewonnen" Szene die ID `10`.
+
+> Erweitere den Code in der `battleWithDragon` Funktion, innerhalb des if statements welches den Sieger entscheidet. Nach der Ausgabe in die Konsole, sende die entsprechende Nummer der Szene zurück.
+
+```js
+if(playerAttack >= dragonAttack) {
+	console.log("Der Spieler hat den Drachen besiegt")
+	return 10
+} else {
+	console.log("Der Drache hat gewonnen!")
+	return 9
+}
+```
+
+Wenn die Funktion `battleWithDragon` nun in eine Variable definiert wird, ruft dies automatisch die Funktion auf. Bisher haben Funktionen in diesem Projekt immer nur Code ausgeführt. Mit dem `return` statement wird zum ersten Mal auch ein Wert zurückgegeben. Dieser Wert wird anschliessend in der Variable gespeichert und kann abgerufen werden.
+
+> Erweitere den Code in der `selectOption` Funktion, innerhalb des if statements welches die `battleWithDragon` Funktion aufruft. Erstelle eine neue Variable mit dem Namen `battleResult` und definiere darin den Aufruf der Funktion `battleWithDragon`. Anschliessend rufst du die Funktion `showSceneContent` auf und als Parameter gibst du den Wert der Variable `battleResult` mit.
+
+```js
+if(option.nextScene === 0) {
+	let battleResult = battleWithDragon()
+	showSceneContent(battleResult)
+} else {
+	showSceneContent(option.nextScene)
+}   
+```
+
+<br>
+
+#### Spiel gewonnen / verloren Szene
+
+> Füge eine neue Szene deinem `scenes` Array hinzu mit der id `9`. Nimm die Beschreibung und die Optionen für die Szene 9 aus dem file `scenes.md` und füge diese hinzu. Als `nextScene` gibst du der Option die Nummer `99`. Als letztes passe den Bildnamen an zu "image09.jpg".
+
+> Füge eine neue Szene deinem `scenes` Array hinzu mit der id `10`. Nimm die Beschreibung und die Optionen für die Szene 10 aus dem file `scenes.md` und füge diese hinzu. Als `nextScene` gibst du der Option die Nummer `99`. Als letztes passe den Bildnamen an zu "image10.jpg".
+
+Die Option der beiden Szenen zeigt auf die Nummer `99` um das Spiel neu zu starten. Gleich wie die Nummer `0` abgefangen wird für die Funktion mit dem Kampf kann nun zusätzlich noch die Nummer `99` abgefangen werden um das Spiel neu zu starten. Dafür wir der Befehl `window.location.reload()` verwendet welcher den Browser zum neuen laden der Seite zwingt. Damit ist der Spieler wieder am Anfang des Spiels, das Inventar ist zurückgesetzt und ein neues Abenteuer kann gestartet werden.
+
+> Erweitere das if statement in der `selectOption` Funktion, welches die `battleWithDragon` Funktion aufruft. Schreibe einen `elseif` Block und prüfe ob die Nummer `99` ist. Wenn dies zutrifft so füre den Code `window.location.reload()` aus.
+
+```js
+if(option.nextScene === 0) {
+	let battleResult = battleWithDragon()
+	showSceneContent(battleResult)
+} else if(option.nextScene === 99) {
+	window.location.reload()
+} 
+else {
+	showSceneContent(option.nextScene)
+}   
+```
+
+Nun fehlen noch zwei kleine Details und das Spiel ist beendet. In der Szene 6 ist die letzte Option das der Spieler davon rennt. Sind wir mal ehrlich, niemand kann einem Drachen davon rennen! Die Option soll auch in einer "verloren" Szene enden, jedoch können wir nicht die bereits vorhanden verwenden weil der Text nicht ganz passt.
+
+> In der Szene 6 ändere in der letzen Option den Wert von `nextScene` zu der Nummer `8`. 
+
+> Füge eine neue Szene deinem `scenes` Array hinzu mit der id `8`. Nimm die Beschreibung und die Optionen für die Szene 8 aus dem file `scenes.md` und füge diese hinzu. Als `nextScene` gibst du der Option die Nummer `99`. Als letztes passe den Bildnamen an zu "image09.jpg". 
+
+> In der Szene 20, passe in der ersten Option den Wert von `nextScene` an und gib einen Wert von `99` um das Spiel neu zu starten. Die zweite Option soll zur Szene mit der Nummer `10` führen und das Spiel direkt gewinnen. 
